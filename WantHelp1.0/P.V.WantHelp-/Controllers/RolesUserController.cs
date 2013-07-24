@@ -18,6 +18,11 @@ namespace P.V.WantHelp_.Controllers
 
         public ActionResult Index()
         {
+            /*  foto Avatar  */
+            int aux = Convert.ToInt32(Session["idUsuario"]);
+            string Cadenausuario = db.Usuario.Where(a => a.Id_Usu == aux).FirstOrDefault().Avatar;
+            ViewBag.fotoA = Cadenausuario;
+            /*******************/
             var webpages_usersinroles = db.webpages_UsersInRoles.Include(w => w.webpages_Roles);
             return View(webpages_usersinroles.ToList());
         }
@@ -27,6 +32,11 @@ namespace P.V.WantHelp_.Controllers
 
         public ActionResult Details(int id = 0)
         {
+            /*  foto Avatar  */
+            int aux = Convert.ToInt32(Session["idUsuario"]);
+            string Cadenausuario = db.Usuario.Where(a => a.Id_Usu == aux).FirstOrDefault().Avatar;
+            ViewBag.fotoA = Cadenausuario;
+            /*******************/
             webpages_UsersInRoles webpages_usersinroles = db.webpages_UsersInRoles.Find(id);
             if (webpages_usersinroles == null)
             {
@@ -40,12 +50,22 @@ namespace P.V.WantHelp_.Controllers
 
         public ActionResult Create()
         {
+            /*  foto Avatar  */
+            int aux = Convert.ToInt32(Session["idUsuario"]);
+            string Cadenausuario = db.Usuario.Where(a => a.Id_Usu == aux).FirstOrDefault().Avatar;
+            ViewBag.fotoA = Cadenausuario;
+            /*******************/
             ViewBag.RoleId = new SelectList(db.webpages_Roles, "RoleId", "RoleName");
             ViewBag.Id_Usu = new SelectList(db.Usuario, "Id_Usu", "Nombre");
             return View();
         }
         public ActionResult Crear()
         {
+            /*  foto Avatar  */
+            int aux = Convert.ToInt32(Session["idUsuario"]);
+            string Cadenausuario = db.Usuario.Where(a => a.Id_Usu == aux).FirstOrDefault().Avatar;
+            ViewBag.fotoA = Cadenausuario;
+            /*******************/
             /*Usuario uss = new Usuario();
             var usuar = uss.Nombre;*/
             ViewBag.RoleId = new SelectList(db.webpages_Roles,"Id_Usu","RoleName");
@@ -58,6 +78,11 @@ namespace P.V.WantHelp_.Controllers
         [HttpPost]
         public ActionResult Create(webpages_UsersInRoles webpages_usersinroles, Usuario userrid)
         {
+            /*  foto Avatar  */
+            int aux = Convert.ToInt32(Session["idUsuario"]);
+            string Cadenausuario = db.Usuario.Where(a => a.Id_Usu == aux).FirstOrDefault().Avatar;
+            ViewBag.fotoA = Cadenausuario;
+            /*******************/
             if (ModelState.IsValid)
             {
                 webpages_UsersInRoles wpur = new webpages_UsersInRoles();
@@ -81,6 +106,11 @@ namespace P.V.WantHelp_.Controllers
 
         public ActionResult Edit(int id = 0)
         {
+            /*  foto Avatar  */
+            int aux = Convert.ToInt32(Session["idUsuario"]);
+            string Cadenausuario = db.Usuario.Where(a => a.Id_Usu == aux).FirstOrDefault().Avatar;
+            ViewBag.fotoA = Cadenausuario;
+            /*******************/
             webpages_UsersInRoles webpages_usersinroles = db.webpages_UsersInRoles.Find(id);
             if (webpages_usersinroles == null)
             {
@@ -96,6 +126,11 @@ namespace P.V.WantHelp_.Controllers
         [HttpPost]
         public ActionResult Edit(webpages_UsersInRoles webpages_usersinroles)
         {
+            /*  foto Avatar  */
+            int aux = Convert.ToInt32(Session["idUsuario"]);
+            string Cadenausuario = db.Usuario.Where(a => a.Id_Usu == aux).FirstOrDefault().Avatar;
+            ViewBag.fotoA = Cadenausuario;
+            /*******************/
             if (ModelState.IsValid)
             {
                 db.Entry(webpages_usersinroles).State = EntityState.Modified;
@@ -107,7 +142,11 @@ namespace P.V.WantHelp_.Controllers
         }
         public ActionResult EditConfirmed()
         {
-            
+            /*  foto Avatar  */
+            int aux = Convert.ToInt32(Session["idUsuario"]);
+            string Cadenausuario = db.Usuario.Where(a => a.Id_Usu == aux).FirstOrDefault().Avatar;
+            ViewBag.fotoA = Cadenausuario;
+            /*******************/
             return RedirectToAction("Create");
 
 
@@ -118,6 +157,11 @@ namespace P.V.WantHelp_.Controllers
 
         public ActionResult Delete(int id = 0)
         {
+            /*  foto Avatar  */
+            int aux = Convert.ToInt32(Session["idUsuario"]);
+            string Cadenausuario = db.Usuario.Where(a => a.Id_Usu == aux).FirstOrDefault().Avatar;
+            ViewBag.fotoA = Cadenausuario;
+            /*******************/
             webpages_UsersInRoles webpages_usersinroles = db.webpages_UsersInRoles.Find(id);
             if (webpages_usersinroles == null)
             {
@@ -132,6 +176,11 @@ namespace P.V.WantHelp_.Controllers
         /*[HttpPost, ActionName("Delete")]*/
         public ActionResult DeleteConfirmed(string id)
         {
+            /*  foto Avatar  */
+            int aux = Convert.ToInt32(Session["idUsuario"]);
+            string Cadenausuario = db.Usuario.Where(a => a.Id_Usu == aux).FirstOrDefault().Avatar;
+            ViewBag.fotoA = Cadenausuario;
+            /*******************/
             int idUs = Convert.ToInt32(id.Split(' ')[0]);
             int idRol = Convert.ToInt32(id.Split(' ')[1]);
 

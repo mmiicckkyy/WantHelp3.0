@@ -11,14 +11,25 @@ namespace P.V.WantHelp_.Controllers
     {
         //
         // GET: /isertar/
+        PlataformaVirtualEntities db = new PlataformaVirtualEntities();
 
         public ActionResult crearusuario()
         {
+            /*  foto Avatar  */
+            int aux = Convert.ToInt32(Session["idUsuario"]);
+            string Cadenausuario = db.Usuario.Where(a => a.Id_Usu == aux).FirstOrDefault().Avatar;
+            ViewBag.fotoA = Cadenausuario;
+            /*******************/
             return View();
         }
         [HttpPost]
         public ActionResult crearusuario(Usuario user)
         {
+            /*  foto Avatar  */
+            int aux = Convert.ToInt32(Session["idUsuario"]);
+            string Cadenausuario = db.Usuario.Where(a => a.Id_Usu == aux).FirstOrDefault().Avatar;
+            ViewBag.fotoA = Cadenausuario;
+            /*******************/
             isertar contexto = new isertar();
             if (contexto.insertarusuario(user)) {
                 return View("Index");
@@ -28,6 +39,11 @@ namespace P.V.WantHelp_.Controllers
 
         public ActionResult Index()
         {
+            /*  foto Avatar  */
+            int aux = Convert.ToInt32(Session["idUsuario"]);
+            string Cadenausuario = db.Usuario.Where(a => a.Id_Usu == aux).FirstOrDefault().Avatar;
+            ViewBag.fotoA = Cadenausuario;
+            /*******************/
             return View();
         }
 

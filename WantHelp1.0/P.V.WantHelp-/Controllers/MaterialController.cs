@@ -13,12 +13,18 @@ namespace P.V.WantHelp_.Controllers
     public class MaterialController : Controller
     {
         private contextodb db = new contextodb();
-
+         
         //
         // GET: /Material/
 
         public ActionResult Index()
         {
+            /*  foto Avatar  */
+            int aux = Convert.ToInt32(Session["idUsuario"]);
+            string Cadenausuario = db.Usuario.Where(a => a.Id_Usu == aux).FirstOrDefault().Avatar;
+            ViewBag.fotoA = Cadenausuario;
+            /*******************/
+
             var material = db.Material.Include(m => m.Cursos).Include(m => m.Usuario);
             //Usuario usuario = db.Usuario.Find(Convert.ToInt32(Session["idus"]));
             //ViewBag.foto = usuario.Avatar;
@@ -30,6 +36,11 @@ namespace P.V.WantHelp_.Controllers
 
         public ActionResult Details(int id = 0)
         {
+            /*  foto Avatar  */
+            int aux = Convert.ToInt32(Session["idUsuario"]);
+            string Cadenausuario = db.Usuario.Where(a => a.Id_Usu == aux).FirstOrDefault().Avatar;
+            ViewBag.fotoA = Cadenausuario;
+            /*******************/
             Material material = db.Material.Find(id);
             if (material == null)
             {
@@ -43,6 +54,11 @@ namespace P.V.WantHelp_.Controllers
 
         public ActionResult Create()
         {
+            /*  foto Avatar  */
+            int aux = Convert.ToInt32(Session["idUsuario"]);
+            string Cadenausuario = db.Usuario.Where(a => a.Id_Usu == aux).FirstOrDefault().Avatar;
+            ViewBag.fotoA = Cadenausuario;
+            /*******************/
             ViewBag.Id_Curso = new SelectList(db.Cursos, "Id_Curso", "Titulo");
             ViewBag.Id_Usu = new SelectList(db.Usuario, "Id_Usu", "Nombre");
             return View();
@@ -54,6 +70,11 @@ namespace P.V.WantHelp_.Controllers
         [HttpPost]
         public ActionResult Create(Material material)
         {
+            /*  foto Avatar  */
+            int aux = Convert.ToInt32(Session["idUsuario"]);
+            string Cadenausuario = db.Usuario.Where(a => a.Id_Usu == aux).FirstOrDefault().Avatar;
+            ViewBag.fotoA = Cadenausuario;
+            /*******************/
             if (ModelState.IsValid)
             {
                 db.Material.Add(material);
@@ -111,6 +132,11 @@ namespace P.V.WantHelp_.Controllers
 
         public ActionResult Edit(int id = 0)
         {
+            /*  foto Avatar  */
+            int aux = Convert.ToInt32(Session["idUsuario"]);
+            string Cadenausuario = db.Usuario.Where(a => a.Id_Usu == aux).FirstOrDefault().Avatar;
+            ViewBag.fotoA = Cadenausuario;
+            /*******************/
             Material material = db.Material.Find(id);
             if (material == null)
             {
@@ -127,6 +153,11 @@ namespace P.V.WantHelp_.Controllers
         [HttpPost]
         public ActionResult Edit(Material material)
         {
+            /*  foto Avatar  */
+            int aux = Convert.ToInt32(Session["idUsuario"]);
+            string Cadenausuario = db.Usuario.Where(a => a.Id_Usu == aux).FirstOrDefault().Avatar;
+            ViewBag.fotoA = Cadenausuario;
+            /*******************/
             if (ModelState.IsValid)
             {
                 db.Entry(material).State = EntityState.Modified;
@@ -143,6 +174,11 @@ namespace P.V.WantHelp_.Controllers
 
         public ActionResult Delete(int id = 0)
         {
+            /*  foto Avatar  */
+            int aux = Convert.ToInt32(Session["idUsuario"]);
+            string Cadenausuario = db.Usuario.Where(a => a.Id_Usu == aux).FirstOrDefault().Avatar;
+            ViewBag.fotoA = Cadenausuario;
+            /*******************/
             Material material = db.Material.Find(id);
             if (material == null)
             {

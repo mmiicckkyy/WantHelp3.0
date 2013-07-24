@@ -9,15 +9,25 @@ namespace P.V.WantHelp_.Controllers
 {
     public class RegistrosController : Controller
     {
+        PlataformaVirtualEntities db = new PlataformaVirtualEntities();
         //
         // GET: /Registros/
         public ActionResult RegistroCurso() {
-            
+            /*  foto Avatar  */
+            int aux = Convert.ToInt32(Session["idUsuario"]);
+            string Cadenausuario = db.Usuario.Where(a => a.Id_Usu == aux).FirstOrDefault().Avatar;
+            ViewBag.fotoA = Cadenausuario;
+            /*******************/
             return View();
         }
         [HttpPost]
         public ActionResult RegistroCurso(Cursos rcurso)
         {
+            /*  foto Avatar  */
+            int aux = Convert.ToInt32(Session["idUsuario"]);
+            string Cadenausuario = db.Usuario.Where(a => a.Id_Usu == aux).FirstOrDefault().Avatar;
+            ViewBag.fotoA = Cadenausuario;
+            /*******************/
             if (ModelState.IsValid)
             {
                 PlataformaVirtualEntities conex = new PlataformaVirtualEntities();
@@ -43,6 +53,11 @@ namespace P.V.WantHelp_.Controllers
         }
         public ActionResult Index()
         {
+            /*  foto Avatar  */
+            int aux = Convert.ToInt32(Session["idUsuario"]);
+            string Cadenausuario = db.Usuario.Where(a => a.Id_Usu == aux).FirstOrDefault().Avatar;
+            ViewBag.fotoA = Cadenausuario;
+            /*******************/
             return View();
         }
 

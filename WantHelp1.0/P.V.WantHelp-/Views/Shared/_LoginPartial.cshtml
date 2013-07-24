@@ -23,31 +23,30 @@
            vertical-align:middle;
            text-align:center;
            float:left;
-        }
-        
+        }        
         .opciones a img {
             border-radius:5px;
         }
-        
+        .hovercontrasena:hover {            
+            background:#dcd7d7;
+        }
     </style>
     <text >
-    <div class="contenedor_opciones">
-               
-        <div class="opciones" style="margin-top:9px; color:#1F3E4E; font-family:Gabriola;font-size:20px; margin-top:0;"><b>@User.Identity.Name</b></div>
-        
+    <div class="contenedor_opciones">               
+        <div class="opciones" style="margin-top:9px; color:#1F3E4E; font-family:Gabriola;font-size:20px; margin-top:0;"><b>@User.Identity.Name</b></div>        
         <div class="opciones">            
             <a href="http://localhost:2606/perfil/Edit/@Session["idUsuario"]"  title="Editar Perfil">                
                 <img src="../@ViewBag.fotoA" width="35" height="31"  />                
             </a>
         </div>
         <div class="opciones" style="margin-top:5px;">
-          <a href="Account/Manage" ><img src="~/Image/configuration2.png" width="24" height="24" title="Cambiar Password"/> </a>            
+          <a href="Account/Manage" ><img src="~/Image/configuration2.png" width="24" height="24" title="Cambiar Password"class="hovercontrasena" /> </a>            
             @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" })) {
             @Html.AntiForgeryToken()            
             }
         </div>
         <div class="opciones" style="margin-top:5px;">
-            <a href="javascript:document.getElementById('logoutForm').submit()" class="LoginOn" ><img src="~/Image/shut-down2.png" width="24" height="24" title="Salir" /></a>
+            <a href="javascript:document.getElementById('logoutForm').submit()" class="LoginOn" ><img src="~/Image/shut-down2.png" width="24" height="24" title="Salir" class="hovercontrasena"/></a>
         </div>
     </div>
     </text>

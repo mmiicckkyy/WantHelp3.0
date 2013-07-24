@@ -20,6 +20,8 @@ namespace P.V.WantHelp_.Controllers
 
         public ActionResult Index()
         {
+            
+            
             if (Request.IsAuthenticated)
             {
                 int aux = Convert.ToInt32(Session["idUsuario"]);
@@ -36,6 +38,11 @@ namespace P.V.WantHelp_.Controllers
 
         public ActionResult Details(int id = 0)
         {
+            /*  foto Avatar  */
+            int aux = Convert.ToInt32(Session["idUsuario"]);
+            string Cadenausuario = db.Usuario.Where(a => a.Id_Usu == aux).FirstOrDefault().Avatar;
+            ViewBag.fotoA = Cadenausuario;
+            /*******************/
             webpages_Roles webpages_roles = db.webpages_Roles.Find(id);
             if (webpages_roles == null)
             {
@@ -49,6 +56,11 @@ namespace P.V.WantHelp_.Controllers
 
         public ActionResult Create()
         {
+            /*  foto Avatar  */
+            int aux = Convert.ToInt32(Session["idUsuario"]);
+            string Cadenausuario = db.Usuario.Where(a => a.Id_Usu == aux).FirstOrDefault().Avatar;
+            ViewBag.fotoA = Cadenausuario;
+            /*******************/
             return View();
         }
 

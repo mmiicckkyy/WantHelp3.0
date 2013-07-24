@@ -20,6 +20,11 @@ namespace P.V.WantHelp_.Controllers
 
         public ActionResult Index()
         {
+            /*  foto Avatar  */
+            int aux = Convert.ToInt32(Session["idUsuario"]);
+            string Cadenausuario = db.Usuario.Where(a => a.Id_Usu == aux).FirstOrDefault().Avatar;
+            ViewBag.fotoA = Cadenausuario;
+            /*******************/
             return View(db.Usuario.ToList());
         }
 
@@ -28,6 +33,11 @@ namespace P.V.WantHelp_.Controllers
 
         public ActionResult Details(int id = 0)
         {
+            /*  foto Avatar  */
+            int aux = Convert.ToInt32(Session["idUsuario"]);
+            string Cadenausuario = db.Usuario.Where(a => a.Id_Usu == aux).FirstOrDefault().Avatar;
+            ViewBag.fotoA = Cadenausuario;
+            /*******************/
             Usuario usuario = db.Usuario.Find(id);
             if (usuario == null)
             {
@@ -42,6 +52,11 @@ namespace P.V.WantHelp_.Controllers
 
         public ActionResult Create()
         {
+            /*  foto Avatar  */
+            int aux = Convert.ToInt32(Session["idUsuario"]);
+            string Cadenausuario = db.Usuario.Where(a => a.Id_Usu == aux).FirstOrDefault().Avatar;
+            ViewBag.fotoA = Cadenausuario;
+            /*******************/
             return View();
         }
 
@@ -51,6 +66,11 @@ namespace P.V.WantHelp_.Controllers
         [HttpPost]
         public ActionResult Create(Usuario usuario)
         {
+            /*  foto Avatar  */
+            int aux = Convert.ToInt32(Session["idUsuario"]);
+            string Cadenausuario = db.Usuario.Where(a => a.Id_Usu == aux).FirstOrDefault().Avatar;
+            ViewBag.fotoA = Cadenausuario;
+            /*******************/
             if (ModelState.IsValid)
             {
                 db.Usuario.Add(usuario);
@@ -66,6 +86,11 @@ namespace P.V.WantHelp_.Controllers
 
         public ActionResult Edit(int id = 0)
         {
+            /*  foto Avatar  */
+            int aux = Convert.ToInt32(Session["idUsuario"]);
+            string Cadenausuario = db.Usuario.Where(a => a.Id_Usu == aux).FirstOrDefault().Avatar;
+            ViewBag.fotoA = Cadenausuario;
+            /*******************/
             Usuario usuario = db.Usuario.Find(id);
             ViewBag.fotoA = usuario.Avatar;
             if (usuario == null)
@@ -81,6 +106,7 @@ namespace P.V.WantHelp_.Controllers
         [HttpPost]
         public ActionResult Edit(Usuario usuario,HttpPostedFileBase imagen)
         {
+            
             if (ModelState.IsValid)
             {
 
@@ -111,6 +137,11 @@ namespace P.V.WantHelp_.Controllers
 
         public ActionResult Delete(int id = 0)
         {
+            /*  foto Avatar  */
+            int aux = Convert.ToInt32(Session["idUsuario"]);
+            string Cadenausuario = db.Usuario.Where(a => a.Id_Usu == aux).FirstOrDefault().Avatar;
+            ViewBag.fotoA = Cadenausuario;
+            /*******************/
             Usuario usuario = db.Usuario.Find(id);
             if (usuario == null)
             {
@@ -125,6 +156,11 @@ namespace P.V.WantHelp_.Controllers
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {
+            /*  foto Avatar  */
+            int aux = Convert.ToInt32(Session["idUsuario"]);
+            string Cadenausuario = db.Usuario.Where(a => a.Id_Usu == aux).FirstOrDefault().Avatar;
+            ViewBag.fotoA = Cadenausuario;
+            /*******************/
             Usuario usuario = db.Usuario.Find(id);
             db.Usuario.Remove(usuario);
             db.SaveChanges();
