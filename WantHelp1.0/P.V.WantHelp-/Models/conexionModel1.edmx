@@ -140,11 +140,11 @@
           </Key>
           <Property Name="Id_Curso" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="Titulo" Type="varchar" Nullable="false" MaxLength="150" />
-          <Property Name="Descripcion" Type="varchar" Nullable="false" MaxLength="400" />
+          <Property Name="Descripcion" Type="text" />
           <Property Name="Fecha_I" Type="datetime" Nullable="false" />
           <Property Name="Fecha_F" Type="datetime" Nullable="false" />
-          <Property Name="urlBase" Type="varchar" MaxLength="250" />
-          <Property Name="urlHost" Type="varchar" MaxLength="250" />
+          <Property Name="urlBase" Type="varchar" MaxLength="200" />
+          <Property Name="urlHost" Type="varchar" MaxLength="200" />
           <Property Name="FotoPortada" Type="varchar" MaxLength="200" />
         </EntityType>
         <EntityType Name="inscripcion">
@@ -241,11 +241,11 @@
           </Key>
           <Property Name="Id_Usu" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="Nombre" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Apellido_P" Type="varchar" Nullable="false" MaxLength="50" />
           <Property Name="Apellido_M" Type="varchar" MaxLength="50" />
           <Property Name="email" Type="varchar" MaxLength="20" />
           <Property Name="sexo" Type="varchar" MaxLength="20" />
           <Property Name="UserId" Type="int" />
-          <Property Name="Apellido_P" Type="varchar" MaxLength="50" />
           <Property Name="Estado" Type="varchar" MaxLength="15" />
           <Property Name="Avatar" Type="varchar" MaxLength="200" />
         </EntityType>
@@ -698,11 +698,11 @@
           </Key>
           <Property Name="Id_Curso" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
           <Property Name="Titulo" Type="String" Nullable="false" MaxLength="150" Unicode="false" FixedLength="false" />
-          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="400" Unicode="false" FixedLength="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
           <Property Name="Fecha_I" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Fecha_F" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="urlBase" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
-          <Property Name="urlHost" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Name="urlBase" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="urlHost" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
           <Property Name="FotoPortada" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
           <NavigationProperty Name="inscripcion" Relationship="PlataformaVirtualModel.FK__inscripcio__idCu__2E1BDC42" FromRole="Cursos" ToRole="inscripcion" />
           <NavigationProperty Name="Material" Relationship="PlataformaVirtualModel.FK__Material__Id_Cur__571DF1D5" FromRole="Cursos" ToRole="Material" />
@@ -827,11 +827,11 @@
           </Key>
           <Property Name="Id_Usu" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
           <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Apellido_P" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="Apellido_M" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="email" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
           <Property Name="sexo" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
           <Property Name="UserId" Type="Int32" />
-          <Property Name="Apellido_P" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="Estado" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
           <Property Name="Avatar" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
           <NavigationProperty Name="archivos" Relationship="PlataformaVirtualModel.FK__archivos__idUs__5070F446" FromRole="Usuario" ToRole="archivos" />
@@ -1298,11 +1298,11 @@
               <MappingFragment StoreEntitySet="Usuario">
                 <ScalarProperty Name="Id_Usu" ColumnName="Id_Usu" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Apellido_P" ColumnName="Apellido_P" />
                 <ScalarProperty Name="Apellido_M" ColumnName="Apellido_M" />
                 <ScalarProperty Name="email" ColumnName="email" />
                 <ScalarProperty Name="sexo" ColumnName="sexo" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
-                <ScalarProperty Name="Apellido_P" ColumnName="Apellido_P" />
                 <ScalarProperty Name="Estado" ColumnName="Estado" />
                 <ScalarProperty Name="Avatar" ColumnName="Avatar" />
               </MappingFragment>

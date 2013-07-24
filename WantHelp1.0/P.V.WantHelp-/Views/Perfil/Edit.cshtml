@@ -4,7 +4,8 @@
     ViewBag.Title = "Edit";
 }
 
-<h2>Editar Usuario</h2>
+<h2  class="letraD">Editar Usuario</h2>
+
 <form action="/Perfil/Edit" method="post"" enctype="multipart/form-data">
 
 
@@ -82,7 +83,10 @@
         </p>
     </fieldset>
 </form>
-<div>
+            <a href="/Home/" class="tooltip circle" title="Home">
+                <img src="~/imagenesmenu/System-Home-icon.png"/>
+            </a>
+<div style="display:none">
     @Html.ActionLink("Detalle", "Details", new {id=Model.Id_Usu})<!--esta parte hay q arreglar-->
     @Html.ActionLink("Atrássss", "Index","Home")    
 </div>
@@ -90,3 +94,4 @@
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
+

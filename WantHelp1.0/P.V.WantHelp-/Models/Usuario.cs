@@ -30,11 +30,11 @@ namespace P.V.WantHelp_.Models
     
         public int Id_Usu { get; set; }
         public string Nombre { get; set; }
+        public string Apellido_P { get; set; }
         public string Apellido_M { get; set; }
         public string email { get; set; }
         public string sexo { get; set; }
         public Nullable<int> UserId { get; set; }
-        public string Apellido_P { get; set; }
         public string Estado { get; set; }
         public string Avatar { get; set; }
     
