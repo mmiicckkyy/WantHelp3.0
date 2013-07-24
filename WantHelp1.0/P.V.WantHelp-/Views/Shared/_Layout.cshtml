@@ -34,6 +34,9 @@
             <div class="float-right">                    
                 <nav>
                     <ul class="menu">
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>                        
+                        <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
+                        <li>@Html.ActionLink("Visión", "About", "Home")</li>
                         @if (ViewBag.Menus != null)
                         {
                             foreach (var item in ViewBag.Menus)
