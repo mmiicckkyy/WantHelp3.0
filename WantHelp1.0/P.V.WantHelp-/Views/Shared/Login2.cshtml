@@ -3,15 +3,19 @@
 }
 <style>
     .userlogin{
-        background-image: url('../../Images/img/man_user.png');
+        background-image: url('../../Image/user221.png');
     }
     .passwordlogin {
-        background-image: url('../../Images/img/password.png');
+        background-image: url('../../Image/key1.png');
     }
-    .userlogin,.passwordlogin{
+    .userlogin,.passwordlogin{           
+        background-position-x:5px;
+        background-position-y:5px;
+        background-size:20px;
+        margin-top:5px;
         margin-left:2px; width:80%;
         background-repeat: no-repeat;
-        padding-left: 26px;
+        padding-left: 30px;
     }
 </style>
 @using (Html.BeginForm("Login","Account")) {
@@ -27,7 +31,7 @@
             </li>
             <li style="margin-left:5px;">
                 Contraseña:
-                <input type="password" class="passwordlogin" name="Password" id="Password" placeholder="*****"/>
+                <input type="password" class="passwordlogin" name="Password" id="Password" placeholder="******"/>
             </li>            
         </ol>
         <input type="submit" style="margin-left:10px; width:25%;" value="Enviar" />

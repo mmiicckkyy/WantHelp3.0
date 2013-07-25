@@ -6,16 +6,25 @@
 
 <link href="~/cssInk/css/ink.css" type="text/css" rel="stylesheet"/>
 
-
+<style> 
+footer {
+        clear:both;
+        background-color: #414E5E;   
+        font-size: .8em;
+        height: 61px;
+        border-radius: 5px 5px 5px 5px;
+        margin:2px 2px 2px 2px;
+    }
+    </style>
 
 <section class="content-wrapper main-content clear-fix">
 <div id="body_Curso">
     <div class="centrarH">
 <h2 class="letraD">Material...</h2>
 
-<p><!---@Html.ActionLink("Create New", "Create")--->
-    <a href="/Material/Create" class="tooltip circle" title="Crear nuevo material">
-    <img src="~/Images/img/folder_new.png"/>
+<p>
+    <a href="/Material/Create" class="tooltip" title="Nuevo material" style="display:none;">
+    <img src="~/Image/add-item.png"/>
     </a>
 </p>
 <table class="ink-table hover">
@@ -63,14 +72,14 @@
         </td>
 
        <td>
-            <a href="/material/Edit/@item.Id_Material" class="tooltip circle" title="Editar">
-                <img src="~/Images/edit.jpg"/>
+            <a href="/material/Edit/@item.Id_Material" class="tooltip" title="Editar">
+                <img src="~/Image/edit.png"/>
             </a><span class="barrita">|</span>
-            <a href="/material/Details/@item.Id_Material" class="tooltip circle" title="Detalle">
-                <img src="~/Images/detalle.jpg"/>
+            <a href="/material/Details/@item.Id_Material" class="tooltip" title="Detalle">
+                <img src="~/Image/addressbook.png"/>
             </a><span class="barrita">|</span>
             <a href="/material/Delete/@item.Id_Material" class="tooltip circle" title="Eliminar">
-                <img src="~/Images/eliminar2.jpg"/>
+                <img src="~/Image/delete-item.png"/>
             </a>
             <div style="display:none;">
                 @Html.ActionLink("Edit", "Edit", new {id=item.Id_Material}) |
@@ -104,9 +113,12 @@
         });
     });
 </script>
-<h2>SaveFiles</h2>
-<div class="demo"></div>
-<div id="myId" class="dropzone"></div>
+        <br />
+<h2 >Subir Archivos</h2>
+<div class="demo"></div>;
+<div title="click para subir archivos"><div id="myId" class="dropzone" style="cursor:pointer;border-radius:5px;box-shadow:0 1px 10px #414E5E; height:50px;width:200px;margin-top:-30px; padding-top:15px;padding-left:25px"></div></div>
+<br />
+<div style=""><b>Puede subir varios archivos la vez.</b></div>
 </div>
     </div>
 </section>

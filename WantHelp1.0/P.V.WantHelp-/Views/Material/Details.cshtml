@@ -3,10 +3,10 @@
 @{
     ViewBag.Title = "Details";
 }
+<div style="background:#ffffff; border-radius:5px;">
+<h2 style="margin-left:5%;">Detalles</h2>
 
-<h2>Details</h2>
-
-<fieldset>
+<fieldset style="margin-left:5%;">
     <legend>Material</legend>
 
     <div class="display-label" style="visibility:hidden;">
@@ -15,43 +15,53 @@
     <div class="display-field" style="visibility:hidden;">
         @Html.DisplayFor(model => model.Id_Material)
     </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Usuario.Nombre)
+    <table>
+    <tr>
+        <td><div class="display-label" style="">
+         <b>@Html.DisplayNameFor(model => model.Usuario.Nombre)</b>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Usuario.Nombre)
     </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Cursos.Titulo)
+            </td>
+    <td><div class="display-label">
+         <b>@Html.DisplayNameFor(model => model.Cursos.Titulo)</b>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Cursos.Titulo)
     </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.archivos)
+        </td>
+    <td><div class="display-label">
+         <b>@Html.DisplayNameFor(model => model.archivos)</b>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.archivos)
     </div>
-
-    <div class="display-label">
+        </td>
+        </tr>
+    </table>
+    <div class="display-label" style="display:none;">
          @Html.DisplayNameFor(model => model.urlBase)
     </div>
-    <div class="display-field">
+    <div class="display-field" style="display:none;">
         @Html.DisplayFor(model => model.urlBase)
     </div>
 
-    <div class="display-label">
+    <div class="display-label" style="display:none;">
          @Html.DisplayNameFor(model => model.urlHost)
     </div>
-    <div class="display-field">
+    <div class="display-field" style="display:none;">
         @Html.DisplayFor(model => model.urlHost)
     </div>
 </fieldset>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.Id_Material }) |
-    @Html.ActionLink("Back to List", "Index")
+<p style="margin-left:5%;">
+    <a href="/Material/" class="tooltip" title="Atrás">
+    <img src="~/Image/next-item.png" style="padding-bottom:8px; padding-right:15px;"/>
+    </a>
+    <a href="/Material/Edit/@Model.Id_Material" class="tooltip" title="Editar">
+    <img src="~/Image/edit.png"/>
+    </a>
+     
+    
 </p>
+    </div>

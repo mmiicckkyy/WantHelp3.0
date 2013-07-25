@@ -23,6 +23,15 @@ namespace P.V.WantHelp_.Controllers
             string Cadenausuario = db.Usuario.Where(a => a.Id_Usu == aux).FirstOrDefault().Avatar;
             ViewBag.fotoA = Cadenausuario;
             /*******************/
+            ViewBag.Id_UsuRol = new SelectList(db.Usuario, "Id_Usu", "Nombre");
+            //ViewBag.UsuarioRol=db.Usuario.Select(a=>a.Nombre).ToList();
+            //UsersContext dbserver = new UsersContext();
+            //List<ListaRoles> listaR = db.webpages_UsersInRoles.Select(a => new ListaRoles()
+            //{
+            //    idRol = a.RoleId,
+            //    idUsuarioRol = a.RoleId,
+            //    NombreR = dbserver.UserProfiles.Where(b => b.UserId = db.webpages_UsersInRoles).Select(b =>b.UserName)
+            //}).ToList();
             var webpages_usersinroles = db.webpages_UsersInRoles.Include(w => w.webpages_Roles);
             return View(webpages_usersinroles.ToList());
         }
@@ -30,7 +39,7 @@ namespace P.V.WantHelp_.Controllers
         //
         // GET: /RolesUser/Details/5
 
-        public ActionResult Details(int id = 0)
+        public ActionResult Details(int id)
         {
             /*  foto Avatar  */
             int aux = Convert.ToInt32(Session["idUsuario"]);
@@ -55,6 +64,7 @@ namespace P.V.WantHelp_.Controllers
             string Cadenausuario = db.Usuario.Where(a => a.Id_Usu == aux).FirstOrDefault().Avatar;
             ViewBag.fotoA = Cadenausuario;
             /*******************/
+
             ViewBag.RoleId = new SelectList(db.webpages_Roles, "RoleId", "RoleName");
             ViewBag.Id_Usu = new SelectList(db.Usuario, "Id_Usu", "Nombre");
             return View();

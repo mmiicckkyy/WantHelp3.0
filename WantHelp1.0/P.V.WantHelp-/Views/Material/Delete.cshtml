@@ -25,57 +25,60 @@
 <div class="popupgeneral">
 		<div class="popupgeneral2 zoomin">
 		
-<h2>Delete</h2>
+<h2>Eliminar</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>Esta seguro de eliminar este material ?</h3><br />
 <fieldset>
     <legend>Material</legend>
+    <div style="display:none;">
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.Id_Material)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Id_Material)
+        </div>
+    </div>
+    
+        <div class="display-label">
+             <b>@Html.DisplayNameFor(model => model.Usuario.Nombre)</b>
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Usuario.Nombre)
+        </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Id_Material)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Id_Material)
-    </div>
+        <div class="display-label">
+             <b>@Html.DisplayNameFor(model => model.Cursos.Titulo)</b>
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Cursos.Titulo)
+        </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Usuario.Nombre)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Usuario.Nombre)
-    </div>
+        <div class="display-label">
+             <b>@Html.DisplayNameFor(model => model.archivos)</b>
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.archivos)
+        </div>
+    
+    <div style="display:none;">
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.urlBase)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.urlBase)
+        </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Cursos.Titulo)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Cursos.Titulo)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.archivos)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.archivos)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.urlBase)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.urlBase)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.urlHost)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.urlHost)
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.urlHost)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.urlHost)
+        </div>
     </div>
 </fieldset>
 @using (Html.BeginForm()) {
     <p>
-        @Html.ActionLink("<-- Atrás", "Index")|
+        <a href="/Material/" style="color:#1e1d1d">Cancelar</a> |        
         <input type="submit" value="Eliminar" class="close" style="background:none; border:none;left:0; text-decoration:underline; font-family:Calibri;font-size:12px" /> 
         
     </p>

@@ -6,14 +6,16 @@
 
 <section class="content-wrapper main-content clear-fix">
 <div id="body_Curso">
+    <a href="/Cursos" class="tooltip circle " title="Atrás">
+            <img src="~/Image/next-item.png"/>
+        </a>&nbsp;&nbsp;
     <div class="centrarH">
 <h2 class="letraD">Detalles</h2>
         <div class="Form">
+
 <fieldset>
     <div id="backbutton" class="win-backbutton" style="margin-top: 15px;">
-        <a href="/Cursos" class="tooltip circle border" title="Back to List">
-            <img src="~/Images/img/resultset_previous.png"/>
-        </a>&nbsp;&nbsp;
+        
         </div>
     <legend>Cursos</legend>
     <table style="margin-left:20%; text-align:center;">
@@ -84,12 +86,12 @@
                     </div>
                 </td>
                 <td>
-                    <div class="display-field">
+                    <div class="display-field" style="display:none;">
                         @Html.DisplayFor(model => model.urlBase)
                     </div>
                 </td>
                 <td>
-                    <div class="display-field">
+                    <div class="display-field" style="display:none;">
                         @Html.DisplayFor(model => model.urlHost)
                     </div>
                 </td>
@@ -97,7 +99,7 @@
     </table>
            <div>
             <a href="/Cursos/Edit/@Model.Id_Curso" class="tooltip circle" title="Editar">
-                <img src="~/Images/edit.jpg"/>
+                <img src="~/Image/edit.png"/>
             </a>
             </div>
             <div style="display:none;">@Html.ActionLink("Edit", "Edit", new { id=Model.Id_Curso}) 

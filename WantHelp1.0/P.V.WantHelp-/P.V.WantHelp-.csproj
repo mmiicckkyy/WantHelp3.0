@@ -208,6 +208,7 @@
       <DependentUpon>conexionModel1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Listacurso.cs" />
+    <Compile Include="Models\ListaRoles.cs" />
     <Compile Include="Models\Material.cs">
       <DependentUpon>conexionModel1.tt</DependentUpon>
     </Compile>
@@ -366,16 +367,27 @@
     <Content Include="Images\img\resultset_next.png" />
     <Content Include="Images\img\resultset_previous.png" />
     <Content Include="Images\vimeo.png" />
+    <Content Include="Image\add-item.png" />
+    <Content Include="Image\addressbook.png" />
+    <Content Include="Image\agent.png" />
     <Content Include="Image\configuration.png" />
     <Content Include="Image\configuration02.png" />
     <Content Include="Image\configuration1.png" />
     <Content Include="Image\configuration2.png" />
+    <Content Include="Image\delete-item.png" />
+    <Content Include="Image\edit.png" />
+    <Content Include="Image\key.png" />
+    <Content Include="Image\key1.png" />
     <Content Include="Image\logout.png" />
+    <Content Include="Image\next-item.png" />
     <Content Include="Image\pass.png" />
     <Content Include="Image\pass2.png" />
     <Content Include="Image\salir.png" />
+    <Content Include="Image\save.png" />
     <Content Include="Image\shut-down.png" />
     <Content Include="Image\shut-down2.png" />
+    <Content Include="Image\user22.png" />
+    <Content Include="Image\user221.png" />
     <Content Include="Js\css\basic.css" />
     <Content Include="Js\css\dropzone.css" />
     <Content Include="Js\dropzone-amd-module.js" />

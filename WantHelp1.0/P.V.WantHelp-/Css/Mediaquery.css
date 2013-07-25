@@ -256,6 +256,9 @@
         position:absolute;
         z-index:3;
     }
+    .contenedorlogin {
+        position:absolute;
+    }
     /*este es el menu de los cursos desplegable*/
     .contenedormenucel {
         float:left;

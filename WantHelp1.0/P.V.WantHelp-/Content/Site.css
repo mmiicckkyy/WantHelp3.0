@@ -57,17 +57,17 @@ mark {
 /**se esta agregando codigo .float-left*/
     .float-left a:hover{
         /*color:#FFAD33;*/
-        color:#037FB2;
+        color:#000;
     }
 /**se esta terminado codigo .float-left*/
 .float-right {
     width:100%;
-    border: 0px solid #FFFFFF;
+    border: 0px solid #000;
     border-radius: 4px 4px 4px 4px;
     margin: 0 auto;
     margin-top:5px;
-    color: #999999;
 }
+
 .float-leftd,
 .float-rightd {
     float: none;
@@ -252,7 +252,6 @@ nav {
     margin: 0 auto;
     max-width: 982px;
     padding: 7px  10px 10px 0px;
-    color: #a5b59d;
 }
 ul.menu {
     font-size: 1.3em;
@@ -269,8 +268,7 @@ ul.menu {
     }
     ul.menu li:hover {
         border-radius: 4px 4px 4px 4px;
-        background: none repeat scroll 0 0 #FFFFFF;
-        color: #A5B571;
+        background: none repeat scroll 0 0 #c3c1c1;
         text-decoration: none;
     }
 
@@ -278,12 +276,12 @@ ul.menu {
             background: none;
             color: #FFFFFF;
             text-decoration: none;
+            padding:15px;
         }
 
         ul.menu li a:hover {
             border-radius: 4px 4px 4px 4px;
-            background: none repeat scroll 0 0 #FFFFFF;
-            color: #A5B571;
+            color: #fff;
             text-decoration: none;
         }
         
@@ -742,9 +740,11 @@ tr.pager td {
         margin: 0;
         padding: 0;
         text-align: center;
+         
     }
 
         ul.menu li {
+            
             margin: 0;
             padding: 0;
         }

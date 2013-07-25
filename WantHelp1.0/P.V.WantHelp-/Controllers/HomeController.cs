@@ -32,9 +32,9 @@ namespace P.V.WantHelp_.Controllers
             if (Request.IsAuthenticated)
             {
                 /*  foto Avatar  */
-                int aux = Convert.ToInt32(Session["idUsuario"]);
-                string Cadenausuario = db.Usuario.Where(a => a.Id_Usu == aux).FirstOrDefault().Avatar;
-                ViewBag.fotoA = Cadenausuario;
+                //int aux = Convert.ToInt32(Session["idUsuario"]);
+                //string Cadenausuario = db.Usuario.Where(a => a.Id_Usu == aux).FirstOrDefault().Avatar;
+                //ViewBag.fotoA = Cadenausuario;
                 /*******************/
                 Permisos check = new Permisos(Convert.ToInt32(Session["idus"]));
                 ViewBag.Menus = check.getPermisos();
@@ -65,6 +65,7 @@ namespace P.V.WantHelp_.Controllers
 		}
         public ActionResult About()
         {
+
             if (Request.IsAuthenticated)
             {
                 /*  foto Avatar  */
@@ -82,6 +83,7 @@ namespace P.V.WantHelp_.Controllers
 
         public ActionResult Contact()
         {
+
             if (Request.IsAuthenticated)
             {
                 /*  foto Avatar  */
