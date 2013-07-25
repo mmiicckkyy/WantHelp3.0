@@ -1,7 +1,19 @@
 ﻿@{
     ViewBag.Title = "Login2";
 }
-
+<style>
+    .userlogin{
+        background-image: url('../../Images/img/man_user.png');
+    }
+    .passwordlogin {
+        background-image: url('../../Images/img/password.png');
+    }
+    .userlogin,.passwordlogin{
+        margin-left:2px; width:80%;
+        background-repeat: no-repeat;
+        padding-left: 26px;
+    }
+</style>
 @using (Html.BeginForm("Login","Account")) {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
@@ -11,11 +23,11 @@
         <ol>
             <li style="margin-left:5px;">
                 Usuario:
-                <input type="text"  style="margin-left:2px; width:90%;" name="Username" id="Username"/>
+                <input type="text"  class="userlogin" name="Username" id="Username" placeholder="Nick"/>
             </li>
             <li style="margin-left:5px;">
                 Contraseña:
-                <input type="password" style="margin-left:2px; width:90%;" name="Password" id="Password"/>
+                <input type="password" class="passwordlogin" name="Password" id="Password" placeholder="*****"/>
             </li>            
         </ol>
         <input type="submit" style="margin-left:10px; width:25%;" value="Enviar" />

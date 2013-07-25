@@ -888,6 +888,19 @@ tr.pager td {
     padding: 10px;
     vertical-align: middle;
   }
+  .body_Pages {
+    margin: 0 auto;
+    width: 97%;
+    background-color: #FFFFFF;
+    border: 1px solid #B8B8B6;
+    border-radius: 5px 5px 5px 5px;
+    height: auto;
+    margin-bottom: 15px;
+    margin-top: 5px;
+    margin-left:10px;
+    padding: 10px;
+    vertical-align: middle;
+  }
   /**inicio letra 3D**/
 .letraD {
     text-shadow: 0 1px 0 #ccc,

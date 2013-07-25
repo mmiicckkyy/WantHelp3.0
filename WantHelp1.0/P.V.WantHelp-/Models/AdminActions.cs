@@ -117,5 +117,77 @@ namespace P.V.WantHelp_.Models
         {
             return server.Usuario.Where(a => a.UserId == p).FirstOrDefault().Id_Usu;
         }
+        /*chat*/
+
+        //internal Usuario getUsuarios(int id)
+        //{
+        //    return server.Usuario.Where(a => a.Id_Usu == id).FirstOrDefault();
+        //}
+        public Usuario getUsuarios(int id)
+        {
+            return server.Usuario.Where(a => a.Id_Usu == id).FirstOrDefault();
+        }
+        public Usuario getUsuario(string name)
+        {
+            return server.Usuario.Where(a => a.Nombre == name).First();
+        }
+        internal bool ActualizarEstado(string p, int id)
+        {
+            //Usuario user = getUsuario(id);
+            Usuario user = getUsuarios(id);
+            user.Estado = p;
+            try
+            {
+                server.SaveChanges();
+                return true;
+            }
+            catch { return false; }
+        }
+        public List<Usuario> getUsuarioConectado()
+        {
+            return server.Usuario.Where(a => a.Estado == "Conectado").ToList();
+        }
+        public List<mensajes> getMensajes()
+        {
+            return server.mensajes.Take(20).OrderByDescending(a => a.id).ToList();
+        }
+        public bool EnviarMensaje(mensajes msn)
+        {
+            server.mensajes.Add(msn);
+            try
+            {
+                server.SaveChanges();
+                return true;
+            }
+            catch { return false; }
+        }
+        //internal bool ActualizarEstado(string p, int id)
+        //{
+        //    //Usuario user = getUsuario(id);
+        //    Usuario user = getUsuario(1);
+        //    user.Estado = p;
+        //    try
+        //    {
+        //        server.SaveChanges();
+        //        return true;
+        //    }
+        //    catch { return false; }
+        //}
+
+        internal bool ActualizarEstado(string p, string id)
+        {
+            Usuario user = getUsuario(id);
+            user.Estado = p;
+            try
+            {
+                server.SaveChanges();
+                return true;
+            }
+            catch { return false; }
+        }
+        public List<Cursos> getCurso()
+        {
+            return server.Cursos.ToList();
+        }
     }
 }

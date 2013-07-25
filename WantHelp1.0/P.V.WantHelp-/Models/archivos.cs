@@ -22,6 +22,8 @@ namespace P.V.WantHelp_.Models
         public string urlHost { get; set; }
     
         public virtual sesiones sesiones { get; set; }
+        public virtual sesiones sesiones1 { get; set; }
         public virtual Usuario Usuario { get; set; }
+        public virtual Usuario Usuario1 { get; set; }
     }
 }

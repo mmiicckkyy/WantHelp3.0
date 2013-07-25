@@ -44,8 +44,17 @@ namespace P.V.WantHelp_.Controllers
                 Usuario mk=new Usuario(); 
                 Session["idUs"] = contexto.getUserId(model.UserName);
                 Session["idUsuario"] = contexto.getUserIdUsuario(Convert.ToInt32(Session["idUs"]));
+                int idsusus =Convert.ToInt32( Session["idUsuario"]);
+                
                 mk.Estado = "conectado";//preguntar al ingeniero
                 ViewBag.foto = mk.Avatar;
+
+                if (contexto.ActualizarEstado("Conectado", model.UserName))
+                {
+                    //contexto.getUsuarios(idsusus); 
+                    Session["idUsu"] = Session["idUs"];
+                    return RedirectToAction("Index", "Estudiante");
+                }
                 //string nombre=contexto.UserProfiles.Where(a => a.UserId == id).FirstOrDefault().UserName;
                 //int aux=Convert.ToInt32(Session["idUs"]);
                 //PlataformaVirtualEntities db=new PlataformaVirtualEntities();
@@ -72,11 +81,13 @@ namespace P.V.WantHelp_.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult LogOff()
         {
+            int id = Convert.ToInt32(Session["idUsu"]);
+            AdminActions contexto = new AdminActions();
+            contexto.ActualizarEstado("No Conectado", id);
             WebSecurity.Logout();
 
             return RedirectToAction("Index", "Home");
         }
-
         //
         // GET: /Account/Register
 

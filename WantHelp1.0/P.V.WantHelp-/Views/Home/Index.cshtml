@@ -4,7 +4,81 @@
 }
 <link rel="stylesheet" type="text/css" href="~/Css/ChatGeneral.css">
 <link rel="stylesheet" type="text/css" href="~/Css/estilosGeneral.css" />
-
+<style>
+    .nav-tabs {
+        line-height: 20px;
+        border: 1px solid transparent;
+        border-bottom: 1px solid #ccc;
+        padding-top: 6px;
+        padding-bottom: 6px;
+        font-size: 11.9px;
+        background: #f5f5f5;
+        text-align:center;
+        text-transform:uppercase;
+        font-style:oblique;
+        font-weight:bold;
+    }
+    .tab-wrap {
+        padding: 12px;
+    }
+    .tab-content {
+        overflow: auto;
+        margin-bottom: 20px;
+    }
+    .tab-content>.active{
+        display: block;
+    }
+    .tab-content,.Contenido{
+        overflow: auto;
+        margin-bottom: 20px;
+        border:1px solid #3497c5;
+        display:block;
+    }
+    .nav,.Contenido {
+        margin-left: 0;
+        margin-bottom: 20px;
+        list-style: none;
+    }
+    .nav-actions li {
+        padding: 2px 0;
+        border-bottom: 1px dotted #eee;
+    }
+    .nav-actions li a {
+        border: 0 none;
+        background-image: url('../../Images/img/cube.png');
+        background-repeat: no-repeat;
+        background-position: left top;
+        padding-left: 26px;
+        text-transform:uppercase;
+    }
+    .nav>li>a {display: block;}
+    .nav-actions li a{
+        color: #3497c5;
+        text-decoration: none;
+        -webkit-transition: all .3s ease;
+        -moz-transition: all .3s ease;
+        -o-transition: all .3s ease;
+        transition: all .3s ease;
+    }
+    /********/
+    .nav-action li {
+        padding: 2px 0;
+        border-bottom: 1px dotted #eee;
+    }
+    /********/
+    .nav-actions li a:hover {
+        background-color: transparent;
+        background-position: 4px top;
+    }
+    .nav-action li a:hover {
+        background-color: transparent;
+        background-position: 4px top;
+    }
+    .nav>li>a:hover, .nav>li>a:focus {
+        text-decoration: none;
+        background-color: #eee;
+    }
+</style>
 <script type="text/javascript" src="~/Js/jquery.min.js"></script>
         <script>
             $(document).ready(function () {
@@ -214,7 +288,7 @@
         <div class="sectorcursos">
             <div style="width:90%;border:1px solid #000;margin:0 auto; margin-top:5px;"></div>
             <p style="margin:0 auto;text-align:center;font-size:18px;"><b>Cursos</b></p>
-            <ul>
+            <ul class="nav nav-actions">
                 @foreach (var item in ViewBag.lista2){                                                        
                              <li><a href="#">@item.titulo</a></li>                             
                 }                
@@ -222,11 +296,20 @@
         </div>
         <div class="RedeSociales">
             <!-- Twitter -->
-            <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://localhost:2606/" data-text="hello, programming MVC 4.0 for the semester project" data-lang="es">Twittear</a>
-            <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>
-            <br /><br />
-            <!-- Facebook -->
+            <script src="http://platform.twitter.com/widgets.js"></script>
+            <a href="https://twitter.com/share" class="twitter-share-button" data-text="#Griffith.es|Visitando la plataforma virtual y la realizacion de proyectos " data-url="https://www.facebook.com/Griffith.es" data-count="horizontal" data-lang="es" >Twittear</a>
             
+            <br /><br />
+            <!-- Place this tag where you want the +1 button to render. -->
+            <div class="g-plusone" data-annotation="none"></div>
+            <!-- Place this tag after the last +1 button tag. -->
+            <script type="text/javascript">
+                (function () {
+                    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                    po.src = 'https://apis.google.com/js/plusone.js';
+                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+                })();
+            </script>
         </div>    
     </div>
     

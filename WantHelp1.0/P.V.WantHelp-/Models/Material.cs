@@ -22,6 +22,8 @@ namespace P.V.WantHelp_.Models
         public string urlHost { get; set; }
     
         public virtual Cursos Cursos { get; set; }
+        public virtual Cursos Cursos1 { get; set; }
         public virtual Usuario Usuario { get; set; }
+        public virtual Usuario Usuario1 { get; set; }
     }
 }

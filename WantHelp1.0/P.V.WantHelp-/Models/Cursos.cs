@@ -17,8 +17,11 @@ namespace P.V.WantHelp_.Models
         public Cursos()
         {
             this.inscripcion = new HashSet<inscripcion>();
+            this.inscripcion1 = new HashSet<inscripcion>();
             this.Material = new HashSet<Material>();
+            this.Material1 = new HashSet<Material>();
             this.sesiones = new HashSet<sesiones>();
+            this.sesiones1 = new HashSet<sesiones>();
         }
     
         public int Id_Curso { get; set; }
@@ -31,7 +34,10 @@ namespace P.V.WantHelp_.Models
         public string FotoPortada { get; set; }
     
         public virtual ICollection<inscripcion> inscripcion { get; set; }
+        public virtual ICollection<inscripcion> inscripcion1 { get; set; }
         public virtual ICollection<Material> Material { get; set; }
+        public virtual ICollection<Material> Material1 { get; set; }
         public virtual ICollection<sesiones> sesiones { get; set; }
+        public virtual ICollection<sesiones> sesiones1 { get; set; }
     }
 }

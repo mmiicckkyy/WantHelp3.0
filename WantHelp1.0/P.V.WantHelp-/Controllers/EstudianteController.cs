@@ -24,6 +24,18 @@ namespace P.V.WantHelp_.Controllers
             //ViewBag.fotoportada = cursofoto.FotoPortada;
             return View(db.Cursos.ToList()); ;
         }
-
+        public ActionResult ClasesCurso(int id)
+        {
+            CursosActions contextoC = new CursosActions();
+            return View(contextoC.getSesiones(id));
+        }
+        public ActionResult IngresarAlCurso(int id)
+        {
+            ViewBag.idUs = Session["idUs"];
+            ViewBag.idSesion = id;
+            ViewBag.NombreCurso = db.Cursos.Where(a => a.Id_Curso == id).Select(a => a.Titulo).ToList();
+            
+            return View();
+        }
     }
 }

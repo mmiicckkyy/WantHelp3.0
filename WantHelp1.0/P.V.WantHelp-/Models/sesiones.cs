@@ -17,8 +17,11 @@ namespace P.V.WantHelp_.Models
         public sesiones()
         {
             this.archivos = new HashSet<archivos>();
+            this.archivos1 = new HashSet<archivos>();
             this.mensajes = new HashSet<mensajes>();
+            this.mensajes1 = new HashSet<mensajes>();
             this.Respuestas_Chat = new HashSet<Respuestas_Chat>();
+            this.Respuestas_Chat1 = new HashSet<Respuestas_Chat>();
         }
     
         public int id { get; set; }
@@ -27,8 +30,12 @@ namespace P.V.WantHelp_.Models
         public int idCu { get; set; }
     
         public virtual ICollection<archivos> archivos { get; set; }
+        public virtual ICollection<archivos> archivos1 { get; set; }
         public virtual Cursos Cursos { get; set; }
+        public virtual Cursos Cursos1 { get; set; }
         public virtual ICollection<mensajes> mensajes { get; set; }
+        public virtual ICollection<mensajes> mensajes1 { get; set; }
         public virtual ICollection<Respuestas_Chat> Respuestas_Chat { get; set; }
+        public virtual ICollection<Respuestas_Chat> Respuestas_Chat1 { get; set; }
     }
 }

@@ -17,15 +17,27 @@ namespace P.V.WantHelp_.Models
         public Usuario()
         {
             this.archivos = new HashSet<archivos>();
+            this.archivos1 = new HashSet<archivos>();
+            this.avatar1 = new HashSet<avatar>();
+            this.avatar2 = new HashSet<avatar>();
             this.Comentarios = new HashSet<Comentarios>();
+            this.Comentarios1 = new HashSet<Comentarios>();
             this.inscripcion = new HashSet<inscripcion>();
+            this.inscripcion1 = new HashSet<inscripcion>();
             this.Material = new HashSet<Material>();
+            this.Material1 = new HashSet<Material>();
             this.mensajes = new HashSet<mensajes>();
+            this.mensajes1 = new HashSet<mensajes>();
             this.Preguntas = new HashSet<Preguntas>();
+            this.Preguntas1 = new HashSet<Preguntas>();
             this.puntuacionChat = new HashSet<puntuacionChat>();
+            this.puntuacionChat1 = new HashSet<puntuacionChat>();
             this.puntuacionRes = new HashSet<puntuacionRes>();
+            this.puntuacionRes1 = new HashSet<puntuacionRes>();
             this.Respuestas = new HashSet<Respuestas>();
+            this.Respuestas1 = new HashSet<Respuestas>();
             this.Respuestas_Chat = new HashSet<Respuestas_Chat>();
+            this.Respuestas_Chat1 = new HashSet<Respuestas_Chat>();
         }
     
         public int Id_Usu { get; set; }
@@ -39,14 +51,26 @@ namespace P.V.WantHelp_.Models
         public string Avatar { get; set; }
     
         public virtual ICollection<archivos> archivos { get; set; }
+        public virtual ICollection<archivos> archivos1 { get; set; }
+        public virtual ICollection<avatar> avatar1 { get; set; }
+        public virtual ICollection<avatar> avatar2 { get; set; }
         public virtual ICollection<Comentarios> Comentarios { get; set; }
+        public virtual ICollection<Comentarios> Comentarios1 { get; set; }
         public virtual ICollection<inscripcion> inscripcion { get; set; }
+        public virtual ICollection<inscripcion> inscripcion1 { get; set; }
         public virtual ICollection<Material> Material { get; set; }
+        public virtual ICollection<Material> Material1 { get; set; }
         public virtual ICollection<mensajes> mensajes { get; set; }
+        public virtual ICollection<mensajes> mensajes1 { get; set; }
         public virtual ICollection<Preguntas> Preguntas { get; set; }
+        public virtual ICollection<Preguntas> Preguntas1 { get; set; }
         public virtual ICollection<puntuacionChat> puntuacionChat { get; set; }
+        public virtual ICollection<puntuacionChat> puntuacionChat1 { get; set; }
         public virtual ICollection<puntuacionRes> puntuacionRes { get; set; }
+        public virtual ICollection<puntuacionRes> puntuacionRes1 { get; set; }
         public virtual ICollection<Respuestas> Respuestas { get; set; }
+        public virtual ICollection<Respuestas> Respuestas1 { get; set; }
         public virtual ICollection<Respuestas_Chat> Respuestas_Chat { get; set; }
+        public virtual ICollection<Respuestas_Chat> Respuestas_Chat1 { get; set; }
     }
 }
