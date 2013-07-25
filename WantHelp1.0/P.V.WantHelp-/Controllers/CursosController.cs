@@ -193,5 +193,64 @@ namespace P.V.WantHelp_.Controllers
             db.Dispose();
             base.Dispose(disposing);
         }
+        /* chat*/
+        [HttpPost]
+        public JsonResult Enviar(mensajes msn1)
+        {
+            if (Session["idUs"] == null)
+            {
+                return Json(new { data = false });
+            }
+            msn1.idUs = Convert.ToInt32(Session["idUs"]);
+            msn1.fecha = DateTime.Now;
+            msn1.idSe = msn1.idSe;
+            msn1.estado = 0;
+            AdminActions contexto = new AdminActions();
+            if (contexto.EnviarMensaje(msn1))
+            {
+                return Json(new { data = true });
+            }
+            return Json(new { data = false });
+        }
+        [HttpPost]
+        public JsonResult getMensajes(mensajes msn)
+        {
+            MensajeActions contexto = new MensajeActions();
+            List<mensajes> ListaMensajes = contexto.getMensajes(msn.idSe);
+            List<MensajesView> listaMostrar = new List<MensajesView>();
+            foreach (var item in ListaMensajes)
+            {
+                MensajesView ins = new MensajesView()
+                {
+                    nick = item.Usuario.Nombre,
+                    mmensaje = item.mensaje,
+                    fecha = item.fecha.ToString()
+                };
+                listaMostrar.Add(ins);
+            }
+            return Json(new { lista = listaMostrar });
+        }
+        public JsonResult getUsuarios()
+        {
+            AdminActions contexto = new AdminActions();
+            List<Usuario> lista = contexto.getUsuarioConectado();
+            List<string> nicks = new List<string>();
+            foreach (var item in lista)
+            {
+                nicks.Add(item.Nombre);
+            }
+            return Json(new { lista = nicks });
+        }
+        public JsonResult getCursos()
+        {
+            AdminActions contexto = new AdminActions();
+            List<Cursos> ListCurso = contexto.getCurso();
+            List<string> course = new List<string>();
+            foreach (var item in ListCurso)
+            {
+                course.Add(item.Titulo);
+            }
+            return Json(new { lista = course });
+        }
     }
 }

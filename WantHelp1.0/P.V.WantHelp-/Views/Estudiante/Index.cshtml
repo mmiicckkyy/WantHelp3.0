@@ -52,5 +52,6 @@
                     <small>@Html.DisplayFor(modelItem => item.Fecha_I) &nbsp;&nbsp;|&nbsp;&nbsp;@Html.DisplayFor(modelItem => item.Fecha_F)</small>    
                 </div>                    
         </div>
-     </a>    
+     </a>
+    @Html.ActionLink("Entrar al Curso", "ClasesCurso", new { id=item.Id_Curso })
 }
