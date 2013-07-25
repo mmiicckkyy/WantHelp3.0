@@ -67,7 +67,10 @@ namespace P.V.WantHelp_.Controllers
         {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             
+=======
+>>>>>>> 300db49ad78d64d9382ff53dd92e0be95e2092a1
 =======
 >>>>>>> 300db49ad78d64d9382ff53dd92e0be95e2092a1
 =======
@@ -91,7 +94,10 @@ namespace P.V.WantHelp_.Controllers
         {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             
+=======
+>>>>>>> 300db49ad78d64d9382ff53dd92e0be95e2092a1
 =======
 >>>>>>> 300db49ad78d64d9382ff53dd92e0be95e2092a1
 =======
