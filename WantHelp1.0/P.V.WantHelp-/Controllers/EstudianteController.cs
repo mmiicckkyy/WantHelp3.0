@@ -31,10 +31,10 @@ namespace P.V.WantHelp_.Controllers
         }
         public ActionResult IngresarAlCurso(int id)
         {
-            ViewBag.idUs = Session["idUs"];
+            ViewBag.idUs = Session["idUsuario"];
             ViewBag.idSesion = id;
-            ViewBag.NombreCurso = db.Cursos.Where(a => a.Id_Curso == id).Select(a => a.Titulo).ToList();
-            
+            string NameS = db.sesiones.Where(a => a.id == id).FirstOrDefault().titulo;
+            ViewBag.NameSc = NameS;
             return View();
         }
     }

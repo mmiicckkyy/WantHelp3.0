@@ -14,6 +14,7 @@
         border:1px solid #cfdee5;
         display:inline-block;
         margin-top: 4px;
+        min-height:120px;
     }
     .ChatRight{
         width:25%;
@@ -187,15 +188,15 @@
             
             if (e.keyCode == 13)
             {
-                if ($("#msn").val() != "")
+                if ($("#mensaje").val() != "")
                 {
-                    console.log($("#msn").val());
+                    console.log($("#mensaje").val());
                     $.post(
                         "/Cursos/Enviar",
-                        { "msj": $("#msn").val(), "idUs": $("#idUs").val(), "idSe": $("#idSe").val() },
+                        { "mensaje": $("#mensaje").val(), "idUs": $("#idUs").val(), "idSe": $("#idSe").val() },
                         function (data) {
                             console.log(data);
-                            $("#msn").val("");
+                            $("#mensaje").val("");
                         },"json");
                 }
             }
@@ -205,7 +206,7 @@
 <div class="contenedor">
     <div class="Mensajes ChatContent">
         <div class="CursoClass">
-             Chat del Curso @ViewBag.NombreCurso
+             Chat del Curso @ViewBag.NameSc
         </div>
         <ul id="listaMensajes">
         </ul>
@@ -217,6 +218,6 @@
     <input type="hidden" id="idUs" value="@ViewBag.idUs" />
     <input type="hidden" id="idSe" value="@ViewBag.idSesion"/>
     <div class="MSN">
-        <textarea class="uiTextareaNoResize uiTextareaAutogrow _1rv DOMControl_placeholder" aria-controls="webMessengerRecentMessages" aria-describedby="webMessengerHeaderName" aria-owns="wmMasterViewThreadlist" name="message_body" id="msn" role="combobox" rows="3" onkeydown="window.Bootloader &amp;&amp; Bootloader.loadComponents([&quot;control-textarea&quot;], function() { TextAreaControl.getInstance(this) }.bind(this)); " aria-label="Escribe una respuesta..." placeholder="Escribe una respuesta..." style=""></textarea>
+        <textarea class="uiTextareaNoResize uiTextareaAutogrow _1rv DOMControl_placeholder" aria-controls="webMessengerRecentMessages" aria-describedby="webMessengerHeaderName" aria-owns="wmMasterViewThreadlist" name="message_body" id="mensaje" role="combobox" rows="3" onkeydown="window.Bootloader &amp;&amp; Bootloader.loadComponents([&quot;control-textarea&quot;], function() { TextAreaControl.getInstance(this) }.bind(this)); " aria-label="Escribe una respuesta..." placeholder="Escribe una respuesta..." style=""></textarea>
     </div>
 </div>

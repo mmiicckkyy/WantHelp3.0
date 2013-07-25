@@ -52,7 +52,7 @@ namespace P.V.WantHelp_.Controllers
                 if (contexto.ActualizarEstado("Conectado", model.UserName))
                 {
                     //contexto.getUsuarios(idsusus); 
-                    Session["idUsu"] = Session["idUs"];
+                    //Session["idUsu"] = Session["idUsuario"];
                     return RedirectToAction("Index", "Estudiante");
                 }
                 //string nombre=contexto.UserProfiles.Where(a => a.UserId == id).FirstOrDefault().UserName;
@@ -81,7 +81,7 @@ namespace P.V.WantHelp_.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult LogOff()
         {
-            int id = Convert.ToInt32(Session["idUsu"]);
+            int id = Convert.ToInt32(Session["idUsuario"]);
             AdminActions contexto = new AdminActions();
             contexto.ActualizarEstado("No Conectado", id);
             WebSecurity.Logout();

@@ -201,7 +201,7 @@ namespace P.V.WantHelp_.Controllers
             {
                 return Json(new { data = false });
             }
-            msn1.idUs = Convert.ToInt32(Session["idUs"]);
+            msn1.idUs = Convert.ToInt32(Session["idUsuario"]);
             msn1.fecha = DateTime.Now;
             msn1.idSe = msn1.idSe;
             msn1.estado = 0;
