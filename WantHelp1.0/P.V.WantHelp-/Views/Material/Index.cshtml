@@ -14,8 +14,8 @@
 <h2 class="letraD">Material...</h2>
 
 <p><!---@Html.ActionLink("Create New", "Create")--->
-    <a href="/Material/Create" class="tooltip circle" title="Crear nuevo material">
-    <img src="~/Images/img/folder_new.png"/>
+    <a href="/Material/Create" class="tooltip circle" title="Nuevo material">
+    <img src="~/Image/add-item.png"/>
     </a>
 </p>
 <table class="ink-table hover">
@@ -64,13 +64,13 @@
 
        <td>
             <a href="/material/Edit/@item.Id_Material" class="tooltip circle" title="Editar">
-                <img src="~/Images/edit.jpg"/>
+                <img src="~/Image/edit.png"/>
             </a><span class="barrita">|</span>
             <a href="/material/Details/@item.Id_Material" class="tooltip circle" title="Detalle">
-                <img src="~/Images/detalle.jpg"/>
+                <img src="~/Image/addressbook.png"/>
             </a><span class="barrita">|</span>
             <a href="/material/Delete/@item.Id_Material" class="tooltip circle" title="Eliminar">
-                <img src="~/Images/eliminar2.jpg"/>
+                <img src="~/Image/delete-item.png"/>
             </a>
             <div style="display:none;">
                 @Html.ActionLink("Edit", "Edit", new {id=item.Id_Material}) |

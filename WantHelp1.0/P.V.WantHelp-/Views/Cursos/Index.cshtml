@@ -9,7 +9,7 @@
     /*border: 5px solid transparent;*/
     /*border:1px solid #65a0d8;*/
     border-radius: 80px;
-    box-shadow: 0px 2px 0px #65a0d8;
+   
     }
     footer {  
     /*background-color: #414E5E;   
@@ -38,8 +38,8 @@
 
 <p>
     <!----@Html.ActionLink("Create New", "Create")--->
-    <a href="/Cursos/Create" class="tooltip circle" title="Crear nuevo Curso">
-        <img src="~/Images/img/folder_new.png"/>
+    <a href="/Cursos/Create" class="tooltip circle" title="Nuevo Curso">
+        <img src="~/Image/add-item.png"/>
     </a>
 </p>
 <table class="ink-table hover">
@@ -98,13 +98,13 @@
         </td>
         <td>
             <a href="/Cursos/Edit/@item.Id_Curso" class="tooltip circle" title="Editar">
-                <img src="~/Images/edit.jpg"/>
+                <img src="~/Image/edit.png"/>
             </a><span class="barrita">|</span>
             <a href="/Cursos/Details/@item.Id_Curso" class="tooltip circle" title="Detalle">
-                <img src="~/Images/detalle.jpg"/>
+                <img src="~/Image/addressbook.png"/>
             </a><span class="barrita">|</span>
             <a href="/Cursos/Delete/@item.Id_Curso" class="tooltip circle" title="Eliminar">
-                <img src="~/Images/eliminar2.jpg"/>
+                <img src="~/Image/delete-item.png"/>
             </a>            
         </td>
     </tr>
