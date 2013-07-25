@@ -65,16 +65,6 @@ namespace P.V.WantHelp_.Controllers
 		}
         public ActionResult About()
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-            
-=======
->>>>>>> 300db49ad78d64d9382ff53dd92e0be95e2092a1
-=======
->>>>>>> 300db49ad78d64d9382ff53dd92e0be95e2092a1
-=======
->>>>>>> 300db49ad78d64d9382ff53dd92e0be95e2092a1
             if (Request.IsAuthenticated)
             {
                 /*  foto Avatar  */
@@ -92,16 +82,6 @@ namespace P.V.WantHelp_.Controllers
 
         public ActionResult Contact()
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-            
-=======
->>>>>>> 300db49ad78d64d9382ff53dd92e0be95e2092a1
-=======
->>>>>>> 300db49ad78d64d9382ff53dd92e0be95e2092a1
-=======
->>>>>>> 300db49ad78d64d9382ff53dd92e0be95e2092a1
             if (Request.IsAuthenticated)
             {
                 /*  foto Avatar  */
