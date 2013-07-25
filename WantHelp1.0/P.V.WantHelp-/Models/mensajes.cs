@@ -17,7 +17,9 @@ namespace P.V.WantHelp_.Models
         public mensajes()
         {
             this.puntuacionChat = new HashSet<puntuacionChat>();
+            this.puntuacionChat1 = new HashSet<puntuacionChat>();
             this.Respuestas_Chat = new HashSet<Respuestas_Chat>();
+            this.Respuestas_Chat1 = new HashSet<Respuestas_Chat>();
         }
     
         public int id { get; set; }
@@ -28,8 +30,12 @@ namespace P.V.WantHelp_.Models
         public System.DateTime fecha { get; set; }
     
         public virtual sesiones sesiones { get; set; }
+        public virtual sesiones sesiones1 { get; set; }
         public virtual Usuario Usuario { get; set; }
+        public virtual Usuario Usuario1 { get; set; }
         public virtual ICollection<puntuacionChat> puntuacionChat { get; set; }
+        public virtual ICollection<puntuacionChat> puntuacionChat1 { get; set; }
         public virtual ICollection<Respuestas_Chat> Respuestas_Chat { get; set; }
+        public virtual ICollection<Respuestas_Chat> Respuestas_Chat1 { get; set; }
     }
 }

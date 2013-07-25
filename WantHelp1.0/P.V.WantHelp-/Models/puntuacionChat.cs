@@ -19,6 +19,8 @@ namespace P.V.WantHelp_.Models
         public int IdUs { get; set; }
     
         public virtual mensajes mensajes { get; set; }
+        public virtual mensajes mensajes1 { get; set; }
         public virtual Usuario Usuario { get; set; }
+        public virtual Usuario Usuario1 { get; set; }
     }
 }

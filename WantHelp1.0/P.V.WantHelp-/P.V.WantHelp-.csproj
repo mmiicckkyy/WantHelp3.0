@@ -179,6 +179,9 @@
     <Compile Include="Models\archivos.cs">
       <DependentUpon>conexionModel1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\avatar.cs">
+      <DependentUpon>conexionModel1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Comentarios.cs">
       <DependentUpon>conexionModel1.tt</DependentUpon>
     </Compile>
@@ -350,6 +353,7 @@
     <Content Include="Images\img\add.png" />
     <Content Include="Images\img\alerta.png" />
     <Content Include="Images\img\calendar.gif" />
+    <Content Include="Images\img\cube.png" />
     <Content Include="Images\img\database_edit.png" />
     <Content Include="Images\img\defaut_small.gif" />
     <Content Include="Images\img\delete.png" />

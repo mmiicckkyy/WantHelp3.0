@@ -12,14 +12,14 @@ namespace P.V.WantHelp_.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class puntuacionRes
+    public partial class avatar
     {
-        public int id { get; set; }
-        public int idRes { get; set; }
-        public int IdUs { get; set; }
+        public int id_avatar { get; set; }
+        public string direccion { get; set; }
+        public string urlBase { get; set; }
+        public string urlHost { get; set; }
+        public int Id_Usu { get; set; }
     
-        public virtual Respuestas_Chat Respuestas_Chat { get; set; }
-        public virtual Respuestas_Chat Respuestas_Chat1 { get; set; }
         public virtual Usuario Usuario { get; set; }
         public virtual Usuario Usuario1 { get; set; }
     }

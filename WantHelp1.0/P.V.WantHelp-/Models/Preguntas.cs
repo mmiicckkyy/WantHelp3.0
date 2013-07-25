@@ -17,6 +17,7 @@ namespace P.V.WantHelp_.Models
         public Preguntas()
         {
             this.Respuestas = new HashSet<Respuestas>();
+            this.Respuestas1 = new HashSet<Respuestas>();
         }
     
         public int Id_Preguntas { get; set; }
@@ -26,6 +27,8 @@ namespace P.V.WantHelp_.Models
         public Nullable<int> conteo { get; set; }
     
         public virtual Usuario Usuario { get; set; }
+        public virtual Usuario Usuario1 { get; set; }
         public virtual ICollection<Respuestas> Respuestas { get; set; }
+        public virtual ICollection<Respuestas> Respuestas1 { get; set; }
     }
 }
