@@ -137,9 +137,9 @@ namespace P.V.WantHelp_.Controllers
         public ActionResult Edit(webpages_UsersInRoles webpages_usersinroles)
         {
             /*  foto Avatar  */
-            int aux = Convert.ToInt32(Session["idUsuario"]);
-            string Cadenausuario = db.Usuario.Where(a => a.Id_Usu == aux).FirstOrDefault().Avatar;
-            ViewBag.fotoA = Cadenausuario;
+            //int aux = Convert.ToInt32(Session["idUsuario"]);
+            //string Cadenausuario = db.Usuario.Where(a => a.Id_Usu == aux).FirstOrDefault().Avatar;
+            //ViewBag.fotoA = Cadenausuario;
             /*******************/
             if (ModelState.IsValid)
             {
@@ -157,7 +157,7 @@ namespace P.V.WantHelp_.Controllers
             string Cadenausuario = db.Usuario.Where(a => a.Id_Usu == aux).FirstOrDefault().Avatar;
             ViewBag.fotoA = Cadenausuario;
             /*******************/
-            return RedirectToAction("Create");
+            return RedirectToAction("Edit");
 
 
         }

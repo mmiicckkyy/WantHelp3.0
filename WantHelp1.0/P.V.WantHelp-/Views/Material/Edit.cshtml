@@ -40,18 +40,18 @@
             @Html.ValidationMessageFor(model => model.archivos)
         </div>
 
-        <div class="editor-label">
+        <div class="editor-label" style="display:none;">
             @Html.LabelFor(model => model.urlBase)
         </div>
-        <div class="editor-field">
+        <div class="editor-field" style="display:none;">
             @Html.EditorFor(model => model.urlBase)
             @Html.ValidationMessageFor(model => model.urlBase)
         </div>
 
-        <div class="editor-label">
+        <div class="editor-label" style="display:none;">
             @Html.LabelFor(model => model.urlHost)
         </div>
-        <div class="editor-field">
+        <div class="editor-field" style="display:none;">
             @Html.EditorFor(model => model.urlHost)
             @Html.ValidationMessageFor(model => model.urlHost)
         </div>

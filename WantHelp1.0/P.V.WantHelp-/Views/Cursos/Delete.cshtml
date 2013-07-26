@@ -5,16 +5,17 @@
 }
 <section class="content-wrapper main-content clear-fix">
 <div id="body_Curso">
+    <div id="backbutton" class="win-backbutton" style="margin-top: 15px;">
+            <a href="/Cursos" class="tooltip" title="Atrás">
+                <img src="~/Image/next-item.png"/>
+            </a>
+        </div>
     <div class="centrarH">
-<h2 class="letraD">Delete</h2>
+<h2 class="letraD">Eliminar</h2>
 <div class="Form">
 <h3 class="letraD">¿Seguro que deseas eliminarlo?</h3>
 <fieldset>
-    <div id="backbutton" class="win-backbutton" style="margin-top: 15px;">
-            <a href="/Cursos" class="tooltip circle border" title="Back to List">
-                <img src="~/Images/img/resultset_previous.png"/>
-            </a>
-        </div>
+    
     <legend>Cursos</legend>
     <table style="margin:auto;">
         <tr class="letraD">
@@ -88,9 +89,8 @@
     </div>
 @using (Html.BeginForm()) {
     <div>
-        <input type="submit" value="Delete" /> 
-        <div style="display:none;">@Html.ActionLink("Back to List", "Index")</div>
-        
+        <input type="submit" value="Eliminar" /> 
+        <div style="display:none;">@Html.ActionLink("Back to List", "Index")</div>        
     </div>
 }
 </div>

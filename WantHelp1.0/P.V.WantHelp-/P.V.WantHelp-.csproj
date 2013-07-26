@@ -385,6 +385,8 @@
     <Content Include="Image\configuration2.png" />
     <Content Include="Image\delete-item.png" />
     <Content Include="Image\edit.png" />
+    <Content Include="Image\home.png" />
+    <Content Include="Image\key1.png" />
     <Content Include="Image\logout.png" />
     <Content Include="Image\next-item.png" />
     <Content Include="Image\pass.png" />
@@ -393,6 +395,7 @@
     <Content Include="Image\save.png" />
     <Content Include="Image\shut-down.png" />
     <Content Include="Image\shut-down2.png" />
+    <Content Include="Image\user221.png" />
     <Content Include="Js\css\basic.css" />
     <Content Include="Js\css\dropzone.css" />
     <Content Include="Js\dropzone-amd-module.js" />
