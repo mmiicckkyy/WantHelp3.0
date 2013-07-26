@@ -248,13 +248,14 @@
         width: 95%;
         border: 1px solid #ff0000;
         height: 1493px;
+
     }
     .ocultarlogin {
         float:left;
         top:0px;        
         right:0px;
         position:absolute;
-        z-index:3;
+        z-index:133;
     }
     .contenedorlogin {
         position:absolute;
@@ -264,7 +265,7 @@
         float:left;
         top:0px;        
         left:0px;
-        position:absolute;9999999999999
+        position:absolute;
         z-index:3;
         display:inline-block;
     }

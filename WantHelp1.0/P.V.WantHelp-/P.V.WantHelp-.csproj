@@ -239,6 +239,7 @@
       <DependentUpon>conexionModel1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\UsuarioCuentaModel.cs" />
+    <Compile Include="Models\usuarioRoles.cs" />
     <Compile Include="Models\webpages_Membership.cs">
       <DependentUpon>conexionModel1.tt</DependentUpon>
     </Compile>

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<P.V.WantHelp_.Models.webpages_UsersInRoles>
+﻿@model IEnumerable<P.V.WantHelp_.Models.usuarioRoles>
 
 @{
     ViewBag.Title = "Index";
@@ -25,7 +25,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.UserId)
+            @Html.DisplayFor(modelItem => item.user.Nombre)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.webpages_Roles.RoleName)
