@@ -5,11 +5,7 @@
 
 <link rel="stylesheet" type="text/css" href="~/Css/ink-min.css">
 <style type="text/css">
-    .circle:hover {
-    /*border: 5px solid transparent;*/
-    /*border:1px solid #65a0d8;*/
-    border-radius: 80px;
-    }
+    
     footer {
     clear:both;
     background-color: #414E5E;   
@@ -22,7 +18,9 @@
     
 }
 </style>
-<h2 class="letraD" style="font-size:30px;">Bienvenido a cursos</h2>
+<section class="content-wrapper main-content clear-fix">
+<div id="body_Curso">
+<h2 class="letraD" style="font-size:30px; left:0;">Bienvenido a los cursos</h2>
 @foreach (var item in Model){
     <h3></h3>
     <h2 style="display:none;">
@@ -45,3 +43,5 @@
      </a>
     @Html.ActionLink("Entrar al Curso", "ClasesCurso", new { id=item.Id_Curso })
 }
+    </div>
+    </section>
