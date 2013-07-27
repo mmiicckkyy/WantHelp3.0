@@ -18,10 +18,10 @@ namespace P.V.WantHelp_.Controllers
 
         public ActionResult Index()
         {
-            /*  foto Avatar  */
+            /*  foto Avatar  
             int aux = Convert.ToInt32(Session["idUsuario"]);
             string Cadenausuario = db.Usuario.Where(a => a.Id_Usu == aux).FirstOrDefault().Avatar;
-            ViewBag.fotoA = Cadenausuario;
+            ViewBag.fotoA = Cadenausuario;*/
             /*******************/
             var webpages_usersinroles = db.webpages_UsersInRoles.Include(w => w.webpages_Roles);
             return View(webpages_usersinroles.ToList());

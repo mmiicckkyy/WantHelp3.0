@@ -26,22 +26,32 @@
     <h2 style="display:none;">
         @Html.DisplayFor(modelItem => item.Id_Curso)
     </h2>
+    
     <a href="http://localhost:2606/" style="cursor:pointer; background-image:url('@Html.DisplayFor(modelItem => item.FotoPortada)')no-repeat; ">
-        <div id="contenedorA">    
+       
+         <div id="contenedorA"> 
+               
+                 
             <h1 class="sin-bordes"  style="font-family:Gabriola;font-size:20px;color:#d7d8e1;">
                 @Html.DisplayFor(modelItem => item.Titulo)        
                 <span class="forma"></span>
+
             </h1>
+
             <div style="margin:auto; margin-left:8%;margin-right:8%;">
                 <img src="@Html.DisplayFor(modelItem => item.FotoPortada)" width="200" height="80" style="border-radius:5px;">
-                @Html.DisplayFor(modelItem => item.Descripcion)            
-            </div>       
+                @Html.DisplayFor(modelItem => item.Descripcion) 
+                        
+            </div>   
+                <div>@Html.ActionLink("Ingresar al Curso", "ClasesCurso", new { id=item.Id_Curso })</div> 
                 <div style="margin:auto;margin-left:65%;width:35%;margin-top:-20px;"><img src="~/Images/cal-icono-9496-32.png">
+                    
                     <small>@Html.DisplayFor(modelItem => item.Fecha_I) &nbsp;&nbsp;|&nbsp;&nbsp;@Html.DisplayFor(modelItem => item.Fecha_F)</small>    
-                </div>                    
+                </div>   
+                            
         </div>
      </a>
-    @Html.ActionLink("Entrar al Curso", "ClasesCurso", new { id=item.Id_Curso })
+    
 }
     </div>
     </section>
