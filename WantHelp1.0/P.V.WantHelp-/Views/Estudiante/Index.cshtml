@@ -41,7 +41,7 @@
                 @Html.DisplayFor(modelItem => item.Descripcion) 
                         
             </div>   
-                <div style="margin-left:8%;margin-top:-5px;">@Html.ActionLink("Ingresar al Curso", "ClasesCurso", new { id=item.Id_Curso })</div> 
+                <div style="margin-left:8%;">@Html.ActionLink("Ingresar al Curso", "ClasesCurso", new { id=item.Id_Curso })</div> 
                 <div style="margin:auto;margin-left:60%;width:40%;margin-top:-30px;">                    
                     <img src="~/Images/cal-icono-9496-32.png" style="display:inline-block;"/>    
                     <small style="display:inline-block; border:0px solid #414E5E; width:219px;">@Html.DisplayFor(modelItem => item.Fecha_I) &nbsp;&nbsp;|&nbsp;&nbsp;@Html.DisplayFor(modelItem => item.Fecha_F)&nbsp;&nbsp;</small>                    
