@@ -26,7 +26,6 @@ namespace P.V.WantHelp_.Models
         }
     
         public DbSet<archivos> archivos { get; set; }
-        public DbSet<avatar> avatar { get; set; }
         public DbSet<Comentarios> Comentarios { get; set; }
         public DbSet<Cursos> Cursos { get; set; }
         public DbSet<inscripcion> inscripcion { get; set; }
@@ -43,5 +42,6 @@ namespace P.V.WantHelp_.Models
         public DbSet<webpages_OAuthMembership> webpages_OAuthMembership { get; set; }
         public DbSet<webpages_Roles> webpages_Roles { get; set; }
         public DbSet<webpages_UsersInRoles> webpages_UsersInRoles { get; set; }
+        public DbSet<DetalleRolesAsignadosUsers> DetalleRolesAsignadosUsers { get; set; }
     }
 }

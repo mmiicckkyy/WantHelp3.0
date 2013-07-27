@@ -22,8 +22,6 @@ namespace P.V.WantHelp_.Models
         public Nullable<int> conteo2 { get; set; }
     
         public virtual Respuestas Respuestas { get; set; }
-        public virtual Respuestas Respuestas1 { get; set; }
         public virtual Usuario Usuario { get; set; }
-        public virtual Usuario Usuario1 { get; set; }
     }
 }

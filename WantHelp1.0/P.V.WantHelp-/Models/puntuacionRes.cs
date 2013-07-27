@@ -19,8 +19,6 @@ namespace P.V.WantHelp_.Models
         public int IdUs { get; set; }
     
         public virtual Respuestas_Chat Respuestas_Chat { get; set; }
-        public virtual Respuestas_Chat Respuestas_Chat1 { get; set; }
         public virtual Usuario Usuario { get; set; }
-        public virtual Usuario Usuario1 { get; set; }
     }
 }

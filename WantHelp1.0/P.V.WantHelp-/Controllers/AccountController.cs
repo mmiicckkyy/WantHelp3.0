@@ -39,13 +39,13 @@ namespace P.V.WantHelp_.Controllers
             if (ModelState.IsValid && WebSecurity.Login(model.UserName, model.Password, persistCookie: model.RememberMe))
             {
                 //Usuario usuario = db.Usuario.Find(Convert.ToInt32(Session["idUsuario"]));
-                
+
                 AdminActions contexto = new AdminActions();
-                Usuario mk=new Usuario(); 
+                Usuario mk = new Usuario();
                 Session["idUs"] = contexto.getUserId(model.UserName);
                 Session["idUsuario"] = contexto.getUserIdUsuario(Convert.ToInt32(Session["idUs"]));
-                int idsusus =Convert.ToInt32( Session["idUsuario"]);
-                
+                int idsusus = Convert.ToInt32(Session["idUsuario"]);
+
                 mk.Estado = "conectado";//preguntar al ingeniero
                 ViewBag.foto = mk.Avatar;
 
@@ -65,7 +65,7 @@ namespace P.V.WantHelp_.Controllers
                 //db.SaveChanges();//
                 //ViewBag.id = contexto.getUserId(model.UserName);
                 //int idU = Convert.ToInt32(contexto.getUserId(model.UserName));
-               // int idd = Convert.ToInt32(mk.Id_Usu.ToString("idU"));
+                // int idd = Convert.ToInt32(mk.Id_Usu.ToString("idU"));
                 return RedirectToLocal(returnUrl);
             }
 
@@ -105,7 +105,7 @@ namespace P.V.WantHelp_.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Register(RegisterModel model)
         {
-                       
+
             if (ModelState.IsValid)
             {
                 // Attempt to register the user
@@ -113,31 +113,35 @@ namespace P.V.WantHelp_.Controllers
                 try
                 {
                     RegistroUsuarioModels conex = new RegistroUsuarioModels();
-                    PlataformaVirtualEntities conex2=new PlataformaVirtualEntities();
+                    PlataformaVirtualEntities conex2 = new PlataformaVirtualEntities();
                     WebSecurity.CreateUserAndAccount(model.UserName, model.Password);
                     Usuario usuario = new Usuario();
                     UserProfile userserver = new UserProfile();
-                    int o = conex2.webpages_Membership.Count()+1;
+                    int o = conex2.webpages_Membership.Count();
+                    int contUse = conex2.webpages_Membership.Count();
                     Usuario u = new Usuario();
                     u.Nombre = model.Nombres;
                     u.Apellido_P = model.ApellidoP;
-                    u.Apellido_M = model.ApellidoM;                    
+                    u.Apellido_M = model.ApellidoM;
                     u.sexo = model.Sexo;
                     if (model.Sexo == "Masculino")
                     {
                         u.Avatar = "../Avatar/male-user1.png";
                     }
-                    else {
+                    else
+                    {
                         u.Avatar = "../Avatar/female-user1.png";
                     }
                     u.email = model.Email;
-                    u.UserId = o;
+                    u.Estado = "Conectado";
+                    u.UserId = contUse;
                     AdminActions contexto = new AdminActions();
                     Usuario mk = new Usuario();
                     conex2.Usuario.Add(u);
                     conex2.SaveChanges();
                     Session["idUs"] = contexto.getUserId(model.UserName);
                     Session["idUsuario"] = contexto.getUserIdUsuario(Convert.ToInt32(Session["idUs"]));
+                    contexto.ActualizarEstado("Conectado", model.UserName);
                     WebSecurity.Login(model.UserName, model.Password);
                     return RedirectToAction("Index", "Home");
                 }
@@ -149,7 +153,7 @@ namespace P.V.WantHelp_.Controllers
 
             // If we got this far, something failed, redisplay form
             return View(model);
-        }        
+        }
 
         //
         // POST: /Account/Disassociate
