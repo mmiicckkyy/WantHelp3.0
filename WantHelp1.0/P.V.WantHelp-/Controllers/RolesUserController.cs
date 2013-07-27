@@ -23,17 +23,7 @@ namespace P.V.WantHelp_.Controllers
             string Cadenausuario = db.Usuario.Where(a => a.Id_Usu == aux).FirstOrDefault().Avatar;
             ViewBag.fotoA = Cadenausuario;
             /*******************/
-            List<usuarioRoles> webpages_usersinroles = db.webpages_UsersInRoles.Include(w => w.webpages_Roles)
-                .Select(a=>new usuarioRoles() {
-                    RoleId=a.RoleId,
-                    UserId=a.UserId
-                }).ToList();
-
-            foreach (var i in webpages_usersinroles)
-            {
-                Usuario user = db.Usuario.Where(a => a.UserId == i.UserId).First();
-                i.user = user;
-            }
+            var webpages_usersinroles = db.webpages_UsersInRoles.Include(w => w.webpages_Roles);
             return View(webpages_usersinroles.ToList());
         }
 
@@ -137,9 +127,9 @@ namespace P.V.WantHelp_.Controllers
         public ActionResult Edit(webpages_UsersInRoles webpages_usersinroles)
         {
             /*  foto Avatar  */
-            //int aux = Convert.ToInt32(Session["idUsuario"]);
-            //string Cadenausuario = db.Usuario.Where(a => a.Id_Usu == aux).FirstOrDefault().Avatar;
-            //ViewBag.fotoA = Cadenausuario;
+            int aux = Convert.ToInt32(Session["idUsuario"]);
+            string Cadenausuario = db.Usuario.Where(a => a.Id_Usu == aux).FirstOrDefault().Avatar;
+            ViewBag.fotoA = Cadenausuario;
             /*******************/
             if (ModelState.IsValid)
             {
@@ -157,7 +147,7 @@ namespace P.V.WantHelp_.Controllers
             string Cadenausuario = db.Usuario.Where(a => a.Id_Usu == aux).FirstOrDefault().Avatar;
             ViewBag.fotoA = Cadenausuario;
             /*******************/
-            return RedirectToAction("Edit");
+            return RedirectToAction("Create");
 
 
         }

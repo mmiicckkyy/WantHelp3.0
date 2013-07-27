@@ -269,22 +269,24 @@ ul.menu {
     }
     ul.menu li:hover {
         border-radius: 4px 4px 4px 4px;
-        background: none repeat scroll 0 0 #FFFFFF;
+        background: none repeat scroll 0 0 #414E5E;
         color: #A5B571;
         text-decoration: none;
+       
     }
 
         ul.menu li a {
-            background: none;
             color: #FFFFFF;
             text-decoration: none;
-        }
+            padding:5px 0 12px 0;
+         }
 
         ul.menu li a:hover {
             border-radius: 4px 4px 4px 4px;
-            background: none repeat scroll 0 0 #FFFFFF;
-            color: #A5B571;
+            background: none repeat scroll 0 0 #414E5E;
+            
             text-decoration: none;
+             border:0px solid #000;
         }
         
 
