@@ -198,5 +198,10 @@ namespace P.V.WantHelp_.Models
             //return server.Usuario.Where(a => a.Id_Usu == id).FirstOrDefault();
             return server.Cursos.Where(a => a.Id_Curso == id).FirstOrDefault();
         }
+
+        internal List<Material> getFileMaterial()
+        {
+            return server.Material.ToList();
+        }
     }
 }

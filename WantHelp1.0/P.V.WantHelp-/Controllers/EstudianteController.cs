@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using P.V.WantHelp_.Models;
+using WebMatrix.WebData;
 using System.IO;
 using System.IO.Compression;
-using System.Data;
-using System.Data.Entity;
+using P.V.WantHelp_.Models;
+
 
 namespace P.V.WantHelp_.Controllers
 {
@@ -57,10 +59,19 @@ namespace P.V.WantHelp_.Controllers
             foreach(Material item in lista)
             {
                 string nombre = item.urlHost.Split('/')[2];
-                string fecha = DateTime.Now;
-                File.Copy(Server.MapPath(item.urlHost),Server.MapPath("/Archivos/descargas"+cursoM.Titulo)+"/"+nombre);
-                // a.File.Copy(Server.MapPath(item.urlAbs), Server.MapPath("/archivos/descargas/"+user.nombres)+"/"+nombre);
+                string fecha =Convert.ToString(DateTime.Now);
+                System.IO. File.Copy(Server.MapPath(item.urlHost),Server.MapPath("/Archivos/descargas"+cursoM.Titulo)+"/"+nombre+fecha);
             }
+            string fechac= Convert.ToString(DateTime.Now);
+            ZipFile.CreateFromDirectory(Server.MapPath("/Archivos/descargas") + @"\" + cursoM.Titulo + @"\", Server.MapPath("/Archivos/descargas") + @"\" + cursoM.Titulo +fechac+ ".zip");
+            string link = "http://localhost:5889/Archivos/descargas/" + cursoM.Titulo + fechac + ".zip";
+            return Json(new { link = link });
         }
+        public ViewResult MostrarCursosArchivos() 
+        {
+            AdminActions contexto = new AdminActions();
+            List<Material> material = contexto.getFileMaterial();
+            return View(material);
+        } 
     }
 }

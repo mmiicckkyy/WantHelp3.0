@@ -598,10 +598,11 @@
     <Content Include="Views\Estudiante\IngresarAlCurso.cshtml" />
     <Content Include="Views\Estudiante\IngresaAlMaterial.cshtml" />
     <Content Include="Views\RolesUser\VistaDetalleRA.cshtml" />
+    <Content Include="Views\Estudiante\MostrarCursosArchivos.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Archivos\" />
+    <Folder Include="Archivos\descargas\" />
     <Folder Include="PortadasCursos\" />
   </ItemGroup>
   <ItemGroup>
