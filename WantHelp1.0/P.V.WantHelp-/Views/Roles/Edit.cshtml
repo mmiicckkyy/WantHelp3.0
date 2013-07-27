@@ -6,9 +6,10 @@
 <section class="content-wrapper main-content clear-fix">
 <div id="body_Curso">
     <div id="backbutton" class="win-backbutton">
-        <a href="/Roles" class="tooltip circle border" title="Atras">
-            <img src="~/Images/img/resultset_previous.png"/>
+        <a href="/Roles" title="Atras">
+            <img src="~/Image/next-item.png"/>
         </a>
+       
     </div>
     <div class="centrarH">
 <h2 class="letraD">Edit</h2>
@@ -34,10 +35,10 @@
             @Html.EditorFor(model => model.RoleName)
             @Html.ValidationMessageFor(model => model.RoleName)
         </div>
-        <div class="editor-label">
+        <div class="editor-label" style="display:none;">
             @Html.LabelFor(model => model.UrlHost)
         </div>
-        <div class="editor-field">
+        <div class="editor-field" style="display:none;">
             @Html.EditorFor(model => model.UrlHost)
             @Html.ValidationMessageFor(model => model.UrlHost)
         </div>

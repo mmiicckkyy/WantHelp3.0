@@ -1,24 +1,47 @@
 ﻿@{
     ViewBag.Title = "IngresarAlCurso";
 }
-
-<h2>Chat</h2>
+<section class="content-wrapper main-content clear-fix body_Pages">
+<h2 class="letraD">Chat</h2>
 <p>@Html.ActionLink("Volver a los Cursos", "Index")</p>
 <style>
     .contenedor {
         background:#ffffff;
         border-radius:5px;
+        margin:0 auto;
+        min-height:30px;
+        text-align:center;
+        border:1px solid #cfdee5;
+        -moz-box-shadow:2px 2px 7px #000;
+        -webkit-box-shadow:2px 2px 7px #000;
+        box-shadow:2px 2px 7px #000;
+    }
+    .opciones{
+       padding-left:0px 2px;
+       margin:2px 5px;
+       color:#000000;
+       font-weight:normal;
+       font-size:12px;
+       vertical-align:middle;
+       text-align:center;
+       float:left;
     }
     .ChatRight, .ChatContent, .ChatLeft {
         border:1px solid #cfdee5;
         display:inline-block;
-        margin-top: 4px;
+        margin-top: 4px; 
         min-height:120px;
+        -moz-box-shadow:2px 2px 7px #000;
+        -webkit-box-shadow:2px 2px 7px #000;
+        box-shadow:2px 2px 7px #000;
     }
     .ChatRight{
         width:25%;
         background: url("../../Images/modelitoRight.png")no-repeat;
         font-weight:bold;
+        margin-left:5px;
+        margin-top: 4px;
+        
     }
     .ChatRight ul li {
         cursor:pointer;
@@ -28,7 +51,7 @@
         width:70%;
     }
     .ChatLeft{
-        width:20%;
+        width:15%;
     }
     .nav-tabs {
         line-height: 20px;
@@ -127,28 +150,25 @@
         list-style-type: circle;
     }
     .CursoClass {
-        border: 0.2em solid rgb(208, 212, 212);
+        
         border-radius:5px;
+        background:rgba(227,229,229, 0.8); /*rgba(64,70,77, 0.8);*/
+        opacity:0.5;
         padding: .4em 1em;
         margin: 0 .5em;
-        color: #3497c5;
+        color: #414e5e;
         text-decoration: none;
         font-weight: bold;
-        font-size: 15px;
+        font-size: 18px;
         font-family: "Arial";
         text-shadow: 0 1px 0 #ccc, 
-                        0 2px 0 #c9c9c9,
+                        0 2px 0 #808080,
                         0 3px 0 #bbb,
-                        0 4px 0 #b9b9b9,
-                        0 5px 0 #aaa,
-                        0 6px 1px rgba(0,0,0,.1),
-                        0 0 5px rgba(0,0,0,.1),
-                        0 1px 3px rgba(0,0,0,.3),
-                        0 3px 5px rgba(0,0,0,.2),
-                        0 5px 10px rgba(0,0,0,.25),
-                        0 10px 10px rgba(0,0,0,.2),
-                        0 20px 20px rgba(0,0,0,.15);
+                        0 4px 0 #eee;               
         text-align: center;
+        -moz-box-shadow:2px 2px 7px #000;
+        -webkit-box-shadow:2px 2px 7px #000;
+        box-shadow:2px 2px 7px #000;
     }
 </style>
 <script>
@@ -203,14 +223,17 @@
     });
 </script>
 <div class="contenedor">
-    <div class="Mensajes ChatContent">
+    <div class="opciones Mensajes ChatContent">
         <div class="CursoClass">
              Chat del Curso @ViewBag.NameSc
         </div>
         <ul id="listaMensajes">
         </ul>
     </div>
-    <div class="Usuarios ChatRight">
+    <div class="opciones Usuarios ChatRight">
+        <div class="CursoClass">
+             Conectados
+        </div>
         <ul class="nav nav-actions">
         </ul>
     </div>
@@ -220,3 +243,5 @@
         <textarea class="uiTextareaNoResize uiTextareaAutogrow _1rv DOMControl_placeholder" aria-controls="webMessengerRecentMessages" aria-describedby="webMessengerHeaderName" aria-owns="wmMasterViewThreadlist" name="message_body" id="mensaje" role="combobox" rows="3" onkeydown="window.Bootloader &amp;&amp; Bootloader.loadComponents([&quot;control-textarea&quot;], function() { TextAreaControl.getInstance(this) }.bind(this)); " aria-label="Escribe una respuesta..." placeholder="Escribe una respuesta..." style=""></textarea>
     </div>
 </div>
+
+</section>
