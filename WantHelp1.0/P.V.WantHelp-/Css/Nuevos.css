@@ -34,10 +34,12 @@
     margin-top:0px;
     padding:0;
 }
-.ponerpregunta input {
-    width:200px;
-    margin:0px 0px 0px 10px;
-    height:18px;
+.opciones1 input {
+    max-width:280px;
+    height:15px;
+}
+.menu_pregunta {
+    margin-left:150px;
 }
 .menu_pregunta li {
     padding:0px 5px 0px 5px;
@@ -47,12 +49,13 @@
     box-shadow:0px 5px 5px 0px #000;
     cursor:pointer;
 }
+
 .preguntadiv {
-    border:0px solid #4cff00;
-    width:98%;
+    width:300px;
+    border:0px solid #4cff00;    
     height:150px;
     max-height:150px;
-    margin:auto;
+    margin-left:28%;
     margin-bottom:5px;
     border-radius:5px;
     box-shadow:2px 2px 2px 2px #462c2c;

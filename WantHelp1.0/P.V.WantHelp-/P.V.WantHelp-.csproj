@@ -599,6 +599,7 @@
     <Content Include="Views\Estudiante\IngresaAlMaterial.cshtml" />
     <Content Include="Views\RolesUser\VistaDetalleRA.cshtml" />
     <Content Include="Views\Estudiante\MostrarCursosArchivos.cshtml" />
+    <Content Include="Views\Estudiante\preguntas.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
