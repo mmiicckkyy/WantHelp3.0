@@ -44,6 +44,8 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
@@ -593,6 +595,7 @@
     <Content Include="Views\Estudiante\Index.cshtml" />
     <Content Include="Views\Estudiante\ClasesCurso.cshtml" />
     <Content Include="Views\Estudiante\IngresarAlCurso.cshtml" />
+    <Content Include="Views\Estudiante\IngresaAlMaterial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

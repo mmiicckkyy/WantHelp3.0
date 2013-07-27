@@ -74,6 +74,10 @@ namespace P.V.WantHelp_.Models
         {
             return server.Material.Where(a => a.Id_Usu == p).ToList();
         }
+        internal List<Material> getFiless(int p)
+        {
+            return server.Material.Where(a => a.Id_Curso == p).ToList();
+        }
         /** Get Id **/
         public Usuario getUsuario(int id)
         {
@@ -188,6 +192,11 @@ namespace P.V.WantHelp_.Models
         public List<Cursos> getCurso()
         {
             return server.Cursos.ToList();
+        }
+        public Cursos getCursos(int id)
+        {
+            //return server.Usuario.Where(a => a.Id_Usu == id).FirstOrDefault();
+            return server.Cursos.Where(a => a.Id_Curso == id).FirstOrDefault();
         }
     }
 }
