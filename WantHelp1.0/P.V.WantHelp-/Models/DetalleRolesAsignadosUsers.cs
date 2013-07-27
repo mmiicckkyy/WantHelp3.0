@@ -12,13 +12,12 @@ namespace P.V.WantHelp_.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class puntuacionChat
+    public partial class DetalleRolesAsignadosUsers
     {
-        public int id { get; set; }
-        public int idMe { get; set; }
-        public int IdUs { get; set; }
-    
-        public virtual mensajes mensajes { get; set; }
-        public virtual Usuario Usuario { get; set; }
+        public int Id_Usu { get; set; }
+        public string Nombre { get; set; }
+        public string Apellido_P { get; set; }
+        public string Apellido_M { get; set; }
+        public string RoleName { get; set; }
     }
 }
